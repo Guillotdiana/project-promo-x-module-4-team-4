@@ -1,5 +1,5 @@
 import GetAvatar from "./GetAvatar";
-import fetchData from "./Fetch";
+import fetchData from "../services/Fetch";
 
 const Form = (props ) => {
 
