@@ -1,12 +1,14 @@
 import companyLogo from "../images/laptop-code-solid.svg";
 import logoSponsor from "../images/adalab.png";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className="header">
-        <a className="header__brand" href="./" title="Haz click para volver a la página inicial">
+        <Link className="header__brand" to="/" title="Haz click para volver a la página inicial">
       <img className="header__companyLogo" src={companyLogo} alt="Logo proyectos molones"/>
       <h1 className="header__title">Card4You</h1>
-         </a>
+         </Link>
      <img className="logoSponsor" src={logoSponsor} alt="Logo Adalab"/>
    </header>
   );

@@ -1,10 +1,11 @@
 import "../styles/App.scss";
-
-
 import { useState } from "react";
 import Header from "./Header";
 import Page from "./Page";
 import Footer from "./Footer";
+import { Routes,Route,Link } from "react-router-dom";
+import Landing from "./Landing";
+import List from "./List";
 
 function App() {
 
@@ -28,12 +29,24 @@ function App() {
   return (
   <>
    <div className="container">
+    <Routes>
+    <Route path="/" element={
+      <Landing/>
+    }/>
+    <Route path="/crear" element={<>
+       <Header/>
+       <Page function= {changeData}  userData= {userData} updateAvatar={updateAvatar} url={url} setUrl={setUrl} />
+       <Footer/>
+      </>
+    }/>
+    <Route path="/proyectos" element={<List/>}/>
+    </Routes>
 
-    <Header/>
+   
 
-    <Page function= {changeData}  userData= {userData} updateAvatar={updateAvatar} url={url} setUrl={setUrl} />
+    
 
-    <Footer/>
+   
    </div>
   </>
 )
