@@ -1,8 +1,11 @@
-# React + Vite
+# Card 4 You 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+En esta aplicación web los usuarios pueden crear tarjetas en las que dan a conocer su perfil profesional y sus proyectos. Una vez recogidos todos sus datos y fotos en un formulario, genera una URL fácil de compartir en diferentes plataformas.
 
-Currently, two official plugins are available:
+Partiendo de un HTML y Scss proporcionado por el cliente, el equipo de desarrollo ha programado las siguientes funcionalidades:
+ - Un formulario que recoge los datos del usuario y a la vez los enseña en la previsualización.
+ - Enlaces al repositorio de GitHub del usuario y a la web de su proyecto.
+ - Un campo para recoger y mostrar en la previsualización una foto suya y otra del proyecto.
+ - La llamada a la API que genera un URL que se muestra en pantalla y es clickable, que lleva a la tarjeta creada y puede copiarse para ser compartido.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+

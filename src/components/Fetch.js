@@ -9,7 +9,6 @@ const fetchData = (userData) => {
         .then((responseData) => {
           console.log(responseData)
           return responseData
-            //La url la debemos guardar en la variable de estado 
       });
   };
 

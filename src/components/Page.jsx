@@ -1,6 +1,5 @@
 import Form from "./Form";
 import Preview from "./Preview";
-import { Link } from "react-router-dom";
 
 const Page = (props) => {
 
@@ -9,10 +8,9 @@ const Page = (props) => {
   return (
     <main className="main">
     <section className="hero">
-      <h2 className="title">Proyectos molones</h2>
-      <p className="hero__text">Escaparate en línea para recoger ideas a través de la tecnología</p>
-      <Link to="/proyectos"><button className="button--link">Ver otros proyectos</button></Link>
-    
+      <h2 className="title">Card4You</h2>
+      <p className="hero__text">Crea tarjetas para mostrar tus proyectos favoritos</p>
+      <a className="button--link" href="./">Ver proyectos</a>
     </section>
 
     <Preview userData= {props.userData} updateAvatar={props.updateAvatar}/>
