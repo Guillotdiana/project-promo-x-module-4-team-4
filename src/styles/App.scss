@@ -8,16 +8,38 @@ fieldset {
   }
   
   :root {
+
+    // Colores nuevos
+
+      $beige: #E6DBC8;
+      $brown: #A69183;
+      $dark-brown: #382923;
+      $grey: #EBEBEB;
+      $ligth-purple: #C0AADE;
+      $purple: #452C73;
+      $green: #B0B861;
   
     /* COLORS */
   
+    // --color-black: #000000;
+    // --color-black-80: rgba(0, 0, 0, 0.8);
+    // --color-greyish-brown: #505050;
+    // --color-greyish-brown-88: rgba(62, 62, 62, 0.88);
+    // --color-dusk: #403a5f;
+    // --color-greyish-brown-two: #575757;
+    // --color-dark: #302c42;
+    // --color-warm-grey: #909090;
+    // --color-white: #ffffff;
+    // --color-dark-lilac: #8176af;
+    // --color-white-50: rgba(255, 255, 255, 0.5);
+
     --color-black: #000000;
     --color-black-80: rgba(0, 0, 0, 0.8);
     --color-greyish-brown: #505050;
     --color-greyish-brown-88: rgba(62, 62, 62, 0.88);
-    --color-dusk: #403a5f;
+    --color-dusk: #A69183;;
     --color-greyish-brown-two: #575757;
-    --color-dark: #302c42;
+    --color-dark: #EBEBEB;
     --color-warm-grey: #909090;
     --color-white: #ffffff;
     --color-dark-lilac: #8176af;
@@ -88,7 +110,7 @@ fieldset {
   .header .header__title {
     font: var(--font-title-brand);
     text-transform: capitalize;
-    color: var(--color-white);
+    color: #452C73;
   }
   
   @media screen and (min-width: 768px) {
@@ -114,6 +136,7 @@ fieldset {
   
   .hero .title {
     font: var(--font-title-big);
+    color: #382923;
     margin-bottom: 8px;
   }
   
@@ -145,7 +168,7 @@ fieldset {
     display: grid;
     grid-template-columns: 40% 60%;
   
-    color: var(--color-black);
+    color: #382923;
     font: var(--font-card-text);
   
     border-radius: 20px;
@@ -251,7 +274,8 @@ fieldset {
   
     box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
     border: solid 1px rgba(0, 0, 0, 0);
-    background-image: radial-gradient(circle at 50% 50%, var(--color-dusk), #211e2e 92%);
+    background-color: #A69183;
+    // background-image: radial-gradient(circle at 50% 50%, var(--color-dusk), #211e2e 92%);
   }
   
   .addForm .title {
