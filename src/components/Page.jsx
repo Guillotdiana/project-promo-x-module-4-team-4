@@ -9,9 +9,9 @@ const Page = (props) => {
   return (
     <main className="main">
     <section className="hero">
-      <h2 className="title">Card4You</h2>
-      <p className="hero__text">Crea tarjetas para mostrar tus proyectos favoritos</p>
-      <Link to="/proyectos" ><button className="button--link" >Ver otros proyectos</button></Link>
+      <h2 className="title">Books4You</h2>
+      <p className="hero__text">Crea tarjetas para mostrar tus libros favoritos</p>
+      <Link to="/proyectos" ><button className="button--link" >Ver otros libros</button></Link>
      
     </section>
 

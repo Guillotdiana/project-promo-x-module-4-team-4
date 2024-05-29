@@ -2,34 +2,34 @@ import Profile from "./Profile";
 
 
 const CardPreview = ({userData}) => {
-  const {name, slogan, technologies, repo, demo, desc, autor, job, image, photo} = userData;
+  const {title, published, shop, reviews, genre, descr, author, country, image, photo} = userData;
 
   return (
     <article className="card">
-        <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
+        <h2 className="card__projectTitle"><span className="card__projectTitle--text">Tarjeta del libro</span></h2>
 
         <div className="card__author">
           <Profile photo={photo}/>
           <p className="card__job">
-          {job || "Full stack Developer"}
+          {country || "España"}
           </p>
-          <h3 className="card__name">{autor || "Emmelie Bjôrklund"}</h3>
+          <h3 className="card__name">{author || "Almudena Grandes"}</h3>
         </div>
     
         <div className="card__project">            
-          <h3 className="card__name">{name || "Elegant Workspace"}</h3>
-          <p className="card__slogan">{slogan || "Diseños Exclusivos"}</p>
-          <h3 className="card__descriptionTitle">Product description</h3>
-          <p className="card__description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
+          <h3 className="card__name">{title || "Inés y la alegría"}</h3>
+          <p className="card__slogan">{published || "2010"}</p>
+          <h3 className="card__descriptionTitle">Descripción del libro</h3>
+          <p className="card__description">{descr || "Una historia de amor, y la historia de unos días que pudieron cambiar para siempre el destino de España"}</p>
 
           <div className="card__technicalInfo">
-            <p className="card__technologies">{technologies || "React JS - HTML - CSS"}</p>
+            <p className="card__technologies">{genre || "Novela histórica"}</p>
         
-            <a className="icon icon__www" href={demo || "#"} title="Haz click para ver el proyecto online" target="_blank">
-              Web link
+            <a className="icon icon__www" href={reviews || "#"} title="Haz click para ver reseñas el libro" target="_blank">
+              Enlace a las reseñas
             </a>
-            <a className="icon icon__github" href={repo || "#"} title="Haz click para ver el código del proyecto">
-              GitHub link
+            <a className="icon icon__github" href={shop || "#"} title="Haz click para obtener el libro">
+              Enlace al libro
             </a>
           </div>
         </div>

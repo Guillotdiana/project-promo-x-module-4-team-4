@@ -9,7 +9,7 @@ import List from "./List";
 
 function App() {
 
-  const [userData, setUserData] = useState({name: "", slogan: "", technologies: "", repo: "", demo: "", desc: "", autor: "", job: "", image: "", photo: ""});
+  const [userData, setUserData] = useState({title: "", published: "", shop: "", reviews: "", genre: "", descr: "", author: "", country: "", image: "", photo: ""});
 
   const [url, setUrl] = useState("");
 

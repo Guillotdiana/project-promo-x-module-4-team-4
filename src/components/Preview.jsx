@@ -1,5 +1,5 @@
 import CardPreview from "./CardPreview";
-import defaultAvatar from '../images/ebook-example.jpg';
+import defaultAvatar from '../images/libro.jpg';
 
 const Preview = (props) => {
   const avatar = props.userData.image === '' ? defaultAvatar : props.userData.image;

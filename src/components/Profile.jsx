@@ -1,6 +1,6 @@
 import React from 'react';
 /* import PropTypes from 'prop-types'; */
-import defaultAvatar from '../images/avatar.webp';
+import defaultAvatar from '../images/almudena.jpg';
 /* import '../stylesheets/Profile.css'; */
 
 function Profile({photo}) {
