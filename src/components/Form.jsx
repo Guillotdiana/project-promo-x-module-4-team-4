@@ -55,8 +55,45 @@ const Form = (props ) => {
         <div className="addForm__2col">
           <input className="addForm__input" type="url" name="shop" id="shop" placeholder="Obtener" maxLength="40" onChange={handleForm} value={props.userData.shop} />
           <input className="addForm__input" type="url" name="reviews" id="reviews" placeholder="Reseñas" maxLength="70" onChange={handleForm} value={props.userData.reviews} />
-        </div>         
-        <input className="addForm__input" type="text" name="genre" id="genre" placeholder="Género del libro" maxLength="20" onChange={handleForm} value={props.userData.genre}/>
+        </div>      
+        <select className="addForm__input" name="genre" id="genre" onChange={handleForm} value={props.userData.genre}>
+          <option value="">Selecciona el género literario</option>
+          <option value="aventura">Aventura</option>
+          <option value="autob">Autobiografía</option>
+          <option value="biografia">Biografía</option>
+          <option value="cienciaFiccion">Ciencia Ficción</option>
+          <option value="comedia">Comedia</option>
+          <option value="cuento">Cuento</option>
+          <option value="distopia">Distopía</option>
+          <option value="drama">Drama</option>
+          <option value="ensayo">Ensayo</option>
+          <option value="erotica">Erótica</option>
+          <option value="epica">Épica</option>
+          <option value="epistolar">Epistolar</option>
+          <option value="fantasia">Fantasía</option>
+          <option value="gastronomico">Gastronómico</option>
+          <option value="historico">Histórico</option>
+          <option value="infantil">Infantil</option>
+          <option value="misterio">Misterio</option>
+          <option value="novela">Novela</option>
+          <option value="novelaGra">Novela Gráfica</option>
+          <option value="onirico">Onírico</option>
+          <option value="parodia">Parodia</option>
+          <option value="poesia">Poesía</option>
+          <option value="policiaco">Policíaco</option>
+          <option value="realismoMagico">Realismo Mágico</option>
+          <option value="romantico">Romántico</option>
+          <option value="satirico">Satírico</option>
+          <option value="teatro">Teatro</option>
+          <option value="terror">Terror</option>
+          <option value="tragedia">Tragedia</option>
+          <option value="utopia">Utopía</option>
+          <option value="viajes">Viajes</option>
+          <option value="western">Western</option>
+          <option value="xenoficcion">Xenoficción</option>
+          <option value="zombie">Zombie</option>
+          </select>  
+        {/* <input className="addForm__input" type="text" name="genre" id="genre" placeholder="Género del libro" maxLength="20" onChange={handleForm} value={props.userData.genre}/> */}
         <textarea className="addForm__input" type="text" name="descr" id="descr" placeholder="Cuéntanos que te ha parecido" maxLength="40" rows="5" onChange={handleForm} value={props.userData.descr}></textarea>
       </fieldset>
 
