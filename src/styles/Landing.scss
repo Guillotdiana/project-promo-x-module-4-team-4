@@ -1,0 +1,17 @@
+
+
+.landingDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &_h1 {
+        font-size: 100px;
+        color: var(--color-dark-lilac);
+    }
+
+    &_buttons {
+        color: var(--color-dusk);
+    }
+}
