@@ -51,7 +51,7 @@ const Form = (props ) => {
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre el libro</legend>
         <input className="addForm__input" type="text" name="title" id="title" placeholder="Título del libro" maxLength="24" onChange={handleForm} value={props.userData.title} />
-        <input className="addForm__input" type="text" name="published" id="pusblished" placeholder="Año de publicación" maxLength="4" onChange={handleForm} value={props.userData.published}/>
+        <input className="addForm__input" type="text" name="published" id="published" placeholder="Año de publicación" maxLength="4" onChange={handleForm} value={props.userData.published}/>
         <div className="addForm__2col">
           <input className="addForm__input" type="url" name="shop" id="shop" placeholder="Obtener" maxLength="40" onChange={handleForm} value={props.userData.shop} />
           <input className="addForm__input" type="url" name="reviews" id="reviews" placeholder="Reseñas" maxLength="70" onChange={handleForm} value={props.userData.reviews} />
