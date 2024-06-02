@@ -1,4 +1,5 @@
 import Profile from "./Profile";
+import Like from "./Like";
 
 
 const CardPreview = ({userData}) => {
@@ -31,6 +32,7 @@ const CardPreview = ({userData}) => {
             <a className="icon icon__github" href={shop || "#"} title="Haz click para obtener el libro">
               Enlace al libro
             </a>
+            <Like/>
           </div>
         </div>
       </article>
