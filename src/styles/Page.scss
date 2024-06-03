@@ -10,12 +10,15 @@
   
   .hero .title {
     font: var(--font-title-big);
-    color: #382923;
+    font-style: italic;
+    font-size: 40px;
+    color: $purple;
     margin-bottom: 8px;
   }
   
   .hero .hero__text {
     font: var(--font-text-big);
+    color: $dark-brown;
     text-align: center;
     margin-inline: 4rem;
     margin-bottom: 1.8rem;
@@ -31,15 +34,12 @@
     padding: 5px 18px;
     color: var(--color-white);
     font: var(--font-button);
-    text-transform: uppercase;
+    
     text-decoration: none;
   
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border-style: solid;
-    border-width: 1px;
-    border-image-source: linear-gradient(to bottom, #2a2a2a 0%, rgba(0, 0, 0, 0));
-    border-image-slice: 1;
+    border: none;
     border-radius: 20px;
     background-color: var(--color-dark-lilac);
     /*

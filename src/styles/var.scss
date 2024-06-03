@@ -45,14 +45,14 @@ $green: #B0B861;
     --font-title-biggest: bold 3rem "Playfair Display", serif;
     --font-title-big: bold 2rem "Playfair Display", serif;
     --font-title-medium: 300 1.5rem "Playfair Display", serif;
-    --font-text-big: normal 1.2rem "Playfair Display", serif;
-    --font-normal: normal 10px "Playfair Display", serif;
+    --font-text-big: 300 1.2rem "Roboto", serif;
+    --font-normal: normal 11px "Roboto", serif;
     --font-button: bold 1rem "Playfair Display", serif;
     --font-card-text: 300 .8rem "Roboto", sans-serif;
     --font-card-section: 300 .8rem "Roboto", sans-serif;
-    --font-card-title: 500 1.2rem "Roboto", sans-serif;
+    --font-card-title: 500 1.2rem "Playfair Display", sans-serif;
     --font-card-subtitle: 400 1.1rem "Roboto", sans-serif;
-    --font-card-tech: 500 1rem "Courgette", cursive;
+    --font-card-tech: 500 1rem "Roboto", cursive;
   }
   
   
@@ -61,6 +61,10 @@ $green: #B0B861;
   :root {
     font: var(--font-normal); /* font-size: 10px; */
     color: var(--color-white);
+
+    a {
+      text-decoration: none;
+    }
   }
   
   @media screen and (min-width: 420px) {
