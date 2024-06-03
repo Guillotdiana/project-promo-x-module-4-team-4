@@ -10,6 +10,7 @@
     overflow: hidden;
 
     &_h1 {
+        font-family: "Playfair Display", serif;;
         font-size: 4.5rem;
         color: var(--color-dark-lilac);
         font-style: italic;
@@ -24,12 +25,13 @@
     }
 
     &_subtitle {
+        font-family: "Playfair Display", serif;
         margin-top: 20px;
         color: #452C73;
         font-style: italic;
         font-size: 1.1rem;
         text-align: center;
-        font-weight: 50;
+        font-weight: 10;
 
         @media screen and (width> 767px) {
             font-size: 1.5rem;
@@ -44,7 +46,7 @@
         margin: 2px;
         padding: 3px;
         background-color: #E6DBC8;
-        font-family: var(--font-title-biggest);
+        font-family: "Playfair Display", serif;
         color: #382923;
         font-weight: 600;
         border-radius: 8px;
@@ -86,10 +88,12 @@
 }
 
 .logoDiv {
+    margin: 20px;
     width: 200px;
 
     @media screen and (width> 767px) {
-        width: 400px;     
+        width: 400px;  
+        margin: 30px;   
     }
 
     @media screen and (min-width: 1024px){
