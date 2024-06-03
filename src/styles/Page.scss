@@ -36,15 +36,19 @@
     font: var(--font-button);
     
     text-decoration: none;
-  
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.158);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: none;
     border-radius: 20px;
-    background-color: var(--color-dark-lilac);
-    /*
-    background-image: linear-gradient(to bottom, var(--color-dark-lilac), var(--color-dark-lilac)), linear-gradient(to bottom, #2a2a2a 0%, rgba(0, 0, 0, 0));
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    */
+    background-color: $ligth-purple;
+    transition: background-image 0.3s, background-color 0.3s, width 0.3s, padding 0.3s, font-size 0.3s, max-width 0.3s;
+
+    &:hover {
+      font-size: 15px;
+      background-color: $green;
+      max-width: 158px;
+      width: 158;
+      padding: 6px 19px;
+    }
   }
