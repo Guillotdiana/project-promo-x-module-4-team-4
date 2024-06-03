@@ -1,7 +1,13 @@
 .header {
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 2.5rem;
+    background-color: rgba(#A69183, 0.5);
+
   }
   
   .header .header__brand {
@@ -13,7 +19,7 @@
   }
   
   .header .header__companyLogo {
-    height: 31px;
+    height: 100px;
     color: var(--color-white);
   }
   
