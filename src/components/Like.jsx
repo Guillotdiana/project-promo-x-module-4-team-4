@@ -7,10 +7,12 @@ function Button() {
     const [liked, setLiked] = useState(false);
   
     function onClick() {
-      confetti({
-        particleCount: 150,
-        spread: 60
-      });
+      if (!liked) {
+        confetti({
+          particleCount: 150,
+          spread: 60
+        });
+      }
       setLiked(!liked);
     }
   
