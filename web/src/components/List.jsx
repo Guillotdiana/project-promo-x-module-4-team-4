@@ -1,11 +1,23 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import CardPreview from './CardPreview'
 import image from "../images/Imagenlist.jpg";
 
 const List = ({userData}) => {
+  
+  const [listBooks, setListBooks] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:5000/getBooks")
+    .then((response) => response.json())
+    .then(info => {
+      setListBooks(info.data)
+    })
+  }, [])
+
   return (
     <div>
       <Header/>
