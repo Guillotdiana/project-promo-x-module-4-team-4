@@ -15,9 +15,9 @@ const Landing = () => {
         <img src={logo} alt="Books4You Logo" className="logoDiv_logo"/>
         </div>
 
-        <div>
-          <Link to="/crear"><button className="landingDiv_buttons">Crear Proyecto</button></Link>
-          <Link to="/proyectos"><button className="landingDiv_buttons">Ver otros proyectos</button></Link>
+        <div className='landing__button'>
+          <Link to="/crear"><button className="landingDiv_buttons">Crear Tarjeta</button></Link>
+          <Link to="/proyectos"><button className="landingDiv_buttons">Ver otros Libros</button></Link>
         </div>
 
         <div className="landingDiv_decoration">

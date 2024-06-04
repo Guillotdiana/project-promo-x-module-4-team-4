@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { Routes,Route,Link } from "react-router-dom";
 import Landing from "./Landing";
 import List from "./List";
+import FavList from "./FavlList";
 
 function App() {
 
@@ -40,13 +41,8 @@ function App() {
       </>
     }/>
     <Route path="/proyectos" element={<List userData={userData}/>}/>
+    <Route path="/listafavoritos" element={<FavList userData={userData}/>}/>
     </Routes>
-
-   
-
-    
-
-   
    </div>
   </>
 )
