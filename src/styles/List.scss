@@ -1,0 +1,46 @@
+
+.list-page{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.cards-container{
+    display: grid;
+    grid-template-columns: 1 fr;
+    gap: 15px;
+    flex-grow: 1;
+
+    @media screen and (width > 767px) {
+       grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (width > 1000px) {
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.list-img{
+    display: none;
+
+    @media screen and (width > 767px) {
+        display: block;
+        width: 20vw;
+        margin-left: 15px;
+        
+
+
+      
+        
+    }
+}
+

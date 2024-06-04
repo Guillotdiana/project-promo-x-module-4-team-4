@@ -39,7 +39,7 @@ function App() {
        <Footer/>
       </>
     }/>
-    <Route path="/proyectos" element={<List/>}/>
+    <Route path="/proyectos" element={<List userData={userData}/>}/>
     </Routes>
 
    
