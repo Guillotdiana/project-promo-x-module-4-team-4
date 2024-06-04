@@ -11,5 +11,5 @@ server.listen(PORT, () => {
 });
 
 //rutas estáticas
-const staticUrl = "./web/dist";
+const staticUrl = "./src/public";
 server.use(express.static(staticUrl));
