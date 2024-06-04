@@ -1,0 +1,40 @@
+.header {
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    background-color: rgba(#A69183, 0.5);
+
+  }
+  
+  .header .header__brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 7px 5px;
+    gap: 7px;
+  }
+  
+  .header .header__companyLogo {
+    height: 100px;
+    color: var(--color-white);
+  }
+  
+  .header .header__title {
+    font: var(--font-title-brand);
+    text-transform: capitalize;
+    color: #452C73;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .main {
+      max-width: 980px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 6fr 5fr;
+      gap: 2rem;
+    }
+  };
