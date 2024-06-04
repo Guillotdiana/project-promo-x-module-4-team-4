@@ -18,7 +18,7 @@ const CardPreview = ({userData}) => {
         </div>
     
         <div className="card__project">            
-          <h3 className="card__name">{title || "Inés y la alegría"}</h3>
+          <h3 className="book__title">{title || "Inés y la alegría"}</h3>
           <p className="card__slogan">{published || "2010"}</p>
           <h3 className="card__descriptionTitle">Descripción del libro</h3>
           <p className="card__description">{descr || "Una historia de amor, y la historia de unos días que pudieron cambiar para siempre el destino de España"}</p>

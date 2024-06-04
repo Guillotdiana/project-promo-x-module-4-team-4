@@ -56,8 +56,8 @@ const Form = (props ) => {
           <input className="addForm__input" type="url" name="shop" id="shop" placeholder="Obtener" maxLength="40" onChange={handleForm} value={props.userData.shop} />
           <input className="addForm__input" type="url" name="reviews" id="reviews" placeholder="Reseñas" maxLength="70" onChange={handleForm} value={props.userData.reviews} />
         </div>      
-        <select className="addForm__input" name="genre" id="genre" onChange={handleForm} value={props.userData.genre}>
-          <option value="">Selecciona el género literario</option>
+        <select className="addForm__input " name="genre" id="genre" onChange={handleForm} value={props.userData.genre} required>
+          <option value="">Selecciona el género literario</option >
           <option value="aventura">Aventura</option>
           <option value="autob">Autobiografía</option>
           <option value="biografia">Biografía</option>

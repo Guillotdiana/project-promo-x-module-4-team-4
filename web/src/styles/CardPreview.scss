@@ -1,7 +1,7 @@
 .card {
     position: relative;
     z-index: 2;
-
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
     display: grid;
     grid-template-columns: 40% 60%;
   
@@ -25,7 +25,7 @@
     position: relative;
     margin: 15px 10px 1rem 0;
     text-align: center;
-    text-transform: capitalize;
+    // text-transform: capitalize;
   
     font: var(--font-card-section);
   }
@@ -39,7 +39,7 @@
     right: 0;
     z-index: 0;
   
-    background-image: linear-gradient(to right, white, #232323 15%, var(--color-black), #232323 85%, white);
+    background-image: linear-gradient(to right, white, $purple, white);
   }
   
   .card .card__projectTitle--text {
@@ -74,6 +74,12 @@
     font: var(--font-card-title);
     margin-bottom: .2rem;
   }
+
+  .card .book__title {
+    font: var(--font-card-title);
+    margin-bottom: .2rem;
+    font-size: 20px;
+  }
   
   .card .card__project {
     margin-right: 10px;
@@ -81,13 +87,15 @@
   
   .card .card__slogan {
     font: var(--font-card-subtitle);
-    margin-top: -.2rem;
+    font-size: 13px;
+    margin-top: 0.3rem;
     margin-bottom: .8rem;
   }
   
   .card .card__descriptionTitle {
-    font-weight: inherit;
-    text-transform: capitalize;
+    padding-bottom: 10px;
+    font-weight: 400;
+    // text-transform: capitalize;
   }
   
   .card .card__technicalInfo {
