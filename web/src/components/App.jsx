@@ -13,6 +13,8 @@ function App() {
 
   const [url, setUrl] = useState("");
 
+  const [filterList, setFilterList] = useState("all")
+
   
   const changeData = (fieldName,inputValue) => {
 
@@ -24,6 +26,14 @@ function App() {
   const updateAvatar = (avatar, image) => {
     setUserData({...userData, [image]: avatar});
   };
+
+  const filterBook = userData.filter((book)=>{
+    if(genre === "aventura"){
+      return book.genre === "aventura"
+    }else if (genre === "autob"){
+      return book.genre === "autob"
+    }
+  })
 
 
   return (
@@ -39,7 +49,7 @@ function App() {
        <Footer/>
       </>
     }/>
-    <Route path="/proyectos" element={<List userData={userData}/>}/>
+    <Route path="/proyectos" element={<List userData={userData} setFilterList={setFilterList}/>}/>
     </Routes>
 
    
