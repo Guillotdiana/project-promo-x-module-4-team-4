@@ -11,10 +11,10 @@ const CardPreview = ({userData}) => {
 
         <div className="card__author">
           <Profile photo={photo}/>
+          <h3 className="card__name">{author || "Almudena Grandes"}</h3>
           <p className="card__job">
           {country || "España"}
           </p>
-          <h3 className="card__name">{author || "Almudena Grandes"}</h3>
         </div>
     
         <div className="card__project">            

@@ -16,18 +16,9 @@
     }
 
     @media screen and (width > 1000px) {
-        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-columns: 1fr 1fr; 
     }
 }
-
-
-
-
-
-
-
-
-
 
 .list-img{
     display: none;
@@ -37,10 +28,12 @@
         width: 20vw;
         margin-left: 15px;
         
-
-
-      
-        
     }
+}
+.list__buttons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
 }
 

@@ -21,13 +21,14 @@ const List = ({userData}) => {
   return (
     <div>
       <Header/>
-      <Link to="/crear"><button>Crear Proyecto</button></Link>
+      <div className='list__buttons'>
+        <Link to="/crear"><button className='button--link'>Crear Proyecto</button></Link>
+        <Link to="/listaFavoritos"><button className='button--link'>Mis favoritos</button></Link>
+      </div>
       <div className='list-page' >
-    
-
         <div className='cards-container'>
           <CardPreview userData={userData}/>
-           <CardPreview userData={userData}/>
+          <CardPreview userData={userData}/>
           <CardPreview userData={userData}/>
           <CardPreview userData={userData}/>
           <CardPreview userData={userData}/>
