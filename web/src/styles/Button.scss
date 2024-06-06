@@ -20,6 +20,7 @@
     background-color: $ligth-purple;
     color: #fff;
     border: 0;
+    font-family: --font-card-subtitle;
     font-size: 1rem;
     font-weight: 400;
     padding: 0.5em 1.25em;
@@ -28,6 +29,7 @@
     position: relative;
     display: flex;
     gap: 0.5em;
+    line-height: 1rem;
     box-shadow:
       0px 1.7px 2.2px rgba(0, 0, 0, 0.02),
       0px 4px 5.3px rgba(0, 0, 0, 0.028),
@@ -42,7 +44,6 @@
       background-color: $green;
     }
   }
-  
-  .likw__button:active {
+  .like__button:active {
     transform: scale(1.01);
   }

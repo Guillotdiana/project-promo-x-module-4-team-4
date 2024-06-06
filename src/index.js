@@ -1,14 +1,15 @@
 //import 
 const express = require("express")
+const cors = require("cors")
 
 //crear mi server
 const server = express();
 server.use(cors())
 
 //configuración del servidor
-const PORT = 5000;
+const PORT = 5001;
 server.listen(PORT, () => {
-    console.log("server is running " + PORT);
+    console.log(`server is running http://localhost:${PORT}`);
 });
 
 //endpoints
