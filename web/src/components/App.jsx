@@ -29,7 +29,7 @@ function App() {
 
   const filterBook = userData.filter((book)=>{
     if(genre === "aventura"){
-      return book.genre === "aventura"
+      return book.genre = genre
     }else if (genre === "autob"){
       return book.genre === "autob"
     }
