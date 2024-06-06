@@ -22,7 +22,7 @@ const List = ({userData}) => {
     <div>
       <Header/>
       <div className='list__buttons'>
-        <Link to="/crear"><button className='button--link'>Crear Proyecto</button></Link>
+        <Link to="/crear"><button className='button--link'>Crear Tarjeta</button></Link>
         <Link to="/listaFavoritos"><button className='button--link'>Mis favoritos</button></Link>
       </div>
       <div className='list-page' >

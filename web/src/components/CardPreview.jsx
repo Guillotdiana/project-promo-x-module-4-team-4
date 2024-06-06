@@ -29,7 +29,7 @@ const CardPreview = ({userData}) => {
             <a className="icon icon__www" href={reviews || "#"} title="Haz click para ver reseñas el libro" target="_blank">
               Enlace a las reseñas
             </a>
-            <a className="icon icon__github" href={shop || "#"} title="Haz click para obtener el libro">
+            <a className="icon icon__github" href={shop || "#"} title="Haz click para obtener el libro" target="_blank">
               Enlace al libro
             </a>
             <Like/>
