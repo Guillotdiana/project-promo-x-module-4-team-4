@@ -3,7 +3,7 @@ const express = require("express")
 
 //crear mi server
 const server = express();
-// server.use(cors());
+server.use(cors());
 
 //configuración del servidor
 const PORT = 5000;
