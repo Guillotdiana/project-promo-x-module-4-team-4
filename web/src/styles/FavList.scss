@@ -1,0 +1,18 @@
+.favlist{
+    color: $purple;
+    font: var(--font-title-medium);
+    text-align: center;
+    margin: 2rem;
+    font-weight: 400;
+    font-size: 2rem;
+    &__buttons{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 3rem;
+    }
+}

@@ -8,10 +8,10 @@ import image from "../images/Imagenlist.jpg";
 
 const List = ({userData, setFilterList}) => {
   
-  const [listBooks, setListBooks] = useState([])
+  const [listBooks, setListBooks, filterBook] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:5000/getBooks")
+    fetch("http://localhost:5001/getBooks")
     .then((response) => response.json())
     .then(info => {
       setListBooks(info.data)
@@ -25,10 +25,12 @@ const List = ({userData, setFilterList}) => {
   return (
     <div>
       <Header/>
-      <Link to="/crear"><button>Crear Proyecto</button></Link>
-
+      <div className='list__buttons'>
+        <Link to="/crear"><button className='button--link'>Crear Tarjeta</button></Link>
+        <Link to="/listaFavoritos"><button className='button--link'>Mis favoritos</button></Link>
+      </div>
       <form action="">
-      <select className="addForm__input " name="genre" id="genre" onChange={handleChange} required>
+      <select className="addForm__input " name="genre" id="genre" onChange={handleChange}  required>
           <option value="all">Selecciona el género literario</option >
           <option value="aventura">Aventura</option>
           <option value="autob">Autobiografía</option>
@@ -64,19 +66,12 @@ const List = ({userData, setFilterList}) => {
           <option value="western">Western</option>
           <option value="xenoficcion">Xenoficción</option>
           <option value="zombie">Zombie</option>
-          </select>  
+          </select> 
       </form>
-
       <div className='list-page' >
-    
-
         <div className='cards-container'>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
+          {listBooks.map((userData) => <CardPreview key={userData.id} userData={userData}/>)}
+          
         </div>
 
       <img  className='list-img' src={image} alt="" /></div>

@@ -3,7 +3,7 @@ import Like from "./Like";
 
 
 const CardPreview = ({userData}) => {
-  const {title, published, shop, reviews, genre, descr, author, country, image, photo} = userData;
+  const {title, published, shop, reviews, genre, descr, name, country, image, photo} = userData;
 
   return (
     <article className="card">
@@ -11,10 +11,10 @@ const CardPreview = ({userData}) => {
 
         <div className="card__author">
           <Profile photo={photo}/>
+          <h3 className="card__name">{name || "Almudena Grandes"}</h3>
           <p className="card__job">
           {country || "España"}
           </p>
-          <h3 className="card__name">{author || "Almudena Grandes"}</h3>
         </div>
     
         <div className="card__project">            
@@ -29,7 +29,7 @@ const CardPreview = ({userData}) => {
             <a className="icon icon__www" href={reviews || "#"} title="Haz click para ver reseñas el libro" target="_blank">
               Enlace a las reseñas
             </a>
-            <a className="icon icon__github" href={shop || "#"} title="Haz click para obtener el libro">
+            <a className="icon icon__github" href={shop || "#"} title="Haz click para obtener el libro" target="_blank">
               Enlace al libro
             </a>
             <Like/>

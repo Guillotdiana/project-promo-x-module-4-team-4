@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { Routes,Route,Link } from "react-router-dom";
 import Landing from "./Landing";
 import List from "./List";
+import FavList from "./FavlList";
 
 function App() {
 
@@ -27,14 +28,9 @@ function App() {
     setUserData({...userData, [image]: avatar});
   };
 
-  const filterBook = userData.filter((book)=>{
-    if(genre === "aventura"){
-      return book.genre = genre
-    }else if (genre === "autob"){
-      return book.genre === "autob"
-    }
-  })
+  const filterBook = filterList === "all"? userData : userData.filter(book => book.genre === filterList);
 
+  
 
   return (
   <>
@@ -49,14 +45,9 @@ function App() {
        <Footer/>
       </>
     }/>
-    <Route path="/proyectos" element={<List userData={userData} setFilterList={setFilterList}/>}/>
+    <Route path="/proyectos" element={<List userData={userData} setFilterList={setFilterList} filterBook={filterBook} />}/>
+    <Route path="/listafavoritos" element={<FavList userData={userData}/>}/>
     </Routes>
-
-   
-
-    
-
-   
    </div>
   </>
 )
