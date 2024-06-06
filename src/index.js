@@ -19,7 +19,7 @@ async function connectDB(){
     const conex = await mysql.createConnection({  
       
         host: "sql.freedb.tech",
-        user: "freedb_books4you_admi",
+        user: "freedb_books4you_admin",
         password: "!q*ENzEAC6rdCgb",
         database: "freedb_books4you"
     });
@@ -33,7 +33,7 @@ async function connectDB(){
 
 server.get("/getBooks", async (req, res) => {
     const conn = await connectDB();
-    const select = `SELECT * FROM Book INNER JOIN author on Book.fkAuthor= author.id`;
+    const select = `SELECT * FROM Book INNER JOIN author on Book.fkAuthor= author.idAuthor`;
     const [result] = await conn.query(select);
     
     res.json({ data: result, count: result.length });

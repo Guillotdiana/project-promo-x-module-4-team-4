@@ -11,7 +11,7 @@ const List = ({userData}) => {
   const [listBooks, setListBooks] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:5000/getBooks")
+    fetch("http://localhost:5001/getBooks")
     .then((response) => response.json())
     .then(info => {
       setListBooks(info.data)
@@ -27,12 +27,8 @@ const List = ({userData}) => {
       </div>
       <div className='list-page' >
         <div className='cards-container'>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
-          <CardPreview userData={userData}/>
+          {listBooks.map((userData) => <CardPreview key={userData.id} userData={userData}/>)}
+          
         </div>
         <img className='list-img'  src={image} alt="" />
    
