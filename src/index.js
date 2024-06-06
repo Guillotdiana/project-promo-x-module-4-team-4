@@ -5,12 +5,8 @@ const mysql = require("mysql2/promise")
 
 //crear mi server
 const server = express();
-<<<<<<< HEAD
 server.use(cors());
-=======
-server.use(cors())
-server.use(express.json())
->>>>>>> 065b0a9faee729113e91a37f47f786dbd4feabb1
+server.use(express.json());
 
 //configuración del servidor
 const PORT = 5001;
