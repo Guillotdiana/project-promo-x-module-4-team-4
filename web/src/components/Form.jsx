@@ -35,10 +35,11 @@ const Form = (props ) => {
       props.setUrl("Faltan los siguientes campos: " + missingFieldNames.join(", "));
     } else {
       fetchData(props.userData).then((response) => {
+
         if (response.success) {
-          props.setUrl(<a className="card-url" href={response.cardURL} target="_blank">Click aquí para ver tu tarjeta</a>);
-        } else {
-          props.setUrl("Hubo un error al generar la URL.");
+          props.setUrl(<a className="card-url" href={response.cardURL} target="_blank">◇ Click aquí para ver tu tarjeta ◇</a>);
+        } else if (!response.success) {
+          props.setUrl(<p>Hubo un error al generar la URL.</p>);
         }
     })
   }
@@ -103,7 +104,7 @@ const Form = (props ) => {
         <input className="addForm__input" type="text" name="author" id="author" placeholder="Nombre del autor" maxLength="16" onChange={handleForm} value={props.userData.author}/>
         <input className="addForm__input" type="text" name="country" id="country" placeholder="Pais del autor" maxLength="15" onChange={handleForm}  value={props.userData.country}/>
       </fieldset>
-      <div className="card-url-box"><p>{props.url}</p></div>
+      <div className="card-url-box">{props.url}</div>
       <fieldset className="addForm__group--upload">
              
         <GetAvatar  updateAvatar={props.updateAvatar} id="image" text="Subir foto del libro"/>
