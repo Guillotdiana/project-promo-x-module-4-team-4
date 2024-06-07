@@ -37,7 +37,6 @@ const Form = (props ) => {
       props.setUrl("Faltan los siguientes campos: " + missingFieldNames.join(", "));
     } else {
       fetchData(props.userData).then((response) => {
-
         if (response.success) {
           props.setUrl(<a className="card-url" href={response.cardURL} target="_blank">◇ Click aquí para ver tu tarjeta ◇</a>);
         } else if (!response.success) {
