@@ -1,7 +1,10 @@
 import GetAvatar from "./GetAvatar";
 import fetchData from "../services/Fetch";
+import { useState } from "react";
 
 const Form = (props ) => {
+
+  const [loader, setLoader] = useState(false);
 
   const handleForm = (ev) =>{
     const fieldName = ev.target.id;
