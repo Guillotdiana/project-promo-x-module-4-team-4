@@ -16,12 +16,14 @@ const Form = (props ) => {
     reviews: "Reseñas",
     genre: "Género del libro",
     descr: "Cuéntanos que te ha parecido",
-    author: "Nombre del autor",
+    name: "Nombre del autor",
     country: "Pais del autor",
+    photo: "Foto del autor",
+    image: "Portada del libro"
   };
 
   const validateFields = (userData) => {
-    const requiredFields = ["title", "published", "shop", "reviews", "genre", "descr", "author", "country"];
+    const requiredFields = ["title", "published", "shop", "reviews", "genre", "descr", "name", "country", "photo", "image"];
     const missingFields = requiredFields.filter(field => !userData[field] || userData[field].trim() === "");
     return missingFields;
   };
@@ -101,7 +103,7 @@ const Form = (props ) => {
 
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre la autora</legend>
-        <input className="addForm__input" type="text" name="author" id="author" placeholder="Nombre del autor" maxLength="16" onChange={handleForm} value={props.userData.author}/>
+        <input className="addForm__input" type="text" name="name" id="name" placeholder="Nombre del autor" maxLength="16" onChange={handleForm} value={props.userData.name}/>
         <input className="addForm__input" type="text" name="country" id="country" placeholder="Pais del autor" maxLength="15" onChange={handleForm}  value={props.userData.country}/>
       </fieldset>
       <div className="card-url-box">{props.url}</div>
