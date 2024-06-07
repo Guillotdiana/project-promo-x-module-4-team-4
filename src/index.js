@@ -69,7 +69,8 @@ server.get("/detailBook/:id", (req, res) => {
     const {id} = req.params;
     const findBook = 'SELECT * FROM Book INNER JOIN author on Book.fkAuthor= author.idAuthor WHERE idBook = ?';
     const [resultBook] = await conn.query(findBook, [id]);
-    res.render("detailBook", { book: resultBook[0] });
+    res.render("detailBook", { book: result[0] });
+    conn.end();
 });
 
 
