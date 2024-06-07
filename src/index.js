@@ -7,6 +7,7 @@ const mysql = require("mysql2/promise")
 const server = express();
 server.use(cors());
 server.use(express.json( {limit: '20mb' }));
+server.set("view engine", "ejs");
 
 //configuración del servidor
 const PORT = 5001;
@@ -62,14 +63,16 @@ server.post("/addBook", async (req, res) => {
     conn.end()
 });
 
-
-server.get("/detailBook", (req, res) => {
-    //para renderizar el detalle
+//motor de plantilla para renderizar el detalle
+server.get("/detailBook/:id", (req, res) => {
+    const conn = await connectDB();
+    const {id} = req.params;
+    const findBook = 'SELECT * FROM Book INNER JOIN author on Book.fkAuthor= author.idAuthor WHERE idBook = ?';
+    const [resultBook] = await conn.query(findBook, [id]);
+    res.render("detailBook", { book: resultBook[0] });
 });
 
-server.delete("/delete", () =>{
 
-});
 
 //rutas estáticas
 const staticUrl = "./src/public";
