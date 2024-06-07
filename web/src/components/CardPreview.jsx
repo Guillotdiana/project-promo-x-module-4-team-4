@@ -3,7 +3,7 @@ import Like from "./Like";
 
 
 const CardPreview = ({userData}) => {
-  const {title, published, shop, reviews, genre, descr, name, country, image, photo} = userData;
+  const {title, published, shop, reviews, genre, descr, author, country, image, photo} = userData;
 
   return (
     <article className="card">
@@ -11,7 +11,7 @@ const CardPreview = ({userData}) => {
 
         <div className="card__author">
           <Profile photo={photo}/>
-          <h3 className="card__name">{name || "Almudena Grandes"}</h3>
+          <h3 className="card__name">{author || "Almudena Grandes"}</h3>
           <p className="card__job">
           {country || "España"}
           </p>

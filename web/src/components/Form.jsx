@@ -94,7 +94,7 @@ const Form = (props ) => {
           <option value="zombie">Zombie</option>
           </select>  
         {/* <input className="addForm__input" type="text" name="genre" id="genre" placeholder="Género del libro" maxLength="20" onChange={handleForm} value={props.userData.genre}/> */}
-        <textarea className="addForm__input" type="text" name="descr" id="descr" placeholder="Cuéntanos que te ha parecido" maxLength="40" rows="5" onChange={handleForm} value={props.userData.descr}></textarea>
+        <textarea className="addForm__input" type="text" name="descr" id="descr" placeholder="Cuéntanos qué te ha parecido" maxLength="40" rows="5" onChange={handleForm} value={props.userData.descr}></textarea>
       </fieldset>
 
       <fieldset className="addForm__group">

@@ -40,10 +40,22 @@ server.get("/getBooks", async (req, res) => {
     conn.end();
 });
 
-server.post("/addBook", (req, res) => {
+ //endpoint para añadir libro
+server.post("/addBook", async (req, res) => {
+    const data = req.body;
+    const conn = await connectDB();
+    const insertAuthor = 'INSERT INTO author (name, country, photo) values(?, ?, ?)';
+    const [resultAuthor] = await conn.query(insertAuthor, [data.name, data.country, data.img]);
+    //insertId
+    const insertProject = 'INSERT INTO Book (title, published, shop, reviews, genre, descr, image, fkAuthor) values (?, ?, ?, ?, ?, ?, ?, ?)';
+    const [resultProject] = await conn.query(insertProject, [data.title, data.published, data.shop, data.reviews, data.genre, data.descr, data.image, data.fkAuthor, resultAuthor.insertId])
 
-    res.json({ success: true, bookURL: "" })
+    //insert BD
+    res.json({ 
+        bookURL: `http://localhost:5001/detailBook/${resultProject.insertId}`,
+        success: true  })
 });
+
 
 server.get("/detailBook", (req, res) => {
     //para renderizar el detalle
