@@ -31,20 +31,24 @@ const Form = (props ) => {
     return missingFields;
   };
 
+ 
   const handleClick = (ev) => {
     ev.preventDefault()
+    !loader ? setLoader(true) : false;
     
     const missingFields = validateFields(props.userData);
     if (missingFields.length > 0) {
       const missingFieldNames = missingFields.map(field => fieldNames[field]);
       props.setUrl("Faltan los siguientes campos: " + missingFieldNames.join(", "));
+      setLoader(false);
     } else {
       fetchData(props.userData).then((response) => {
-
         if (response.success) {
           props.setUrl(<a className="card-url" href={response.cardURL} target="_blank">◇ Click aquí para ver tu tarjeta ◇</a>);
+          setLoader(false);
         } else if (!response.success) {
           props.setUrl(<p>Hubo un error al generar la URL.</p>);
+          setLoader(false);
         }
     })
   }
@@ -109,7 +113,15 @@ const Form = (props ) => {
         <input className="addForm__input" type="text" name="name" id="name" placeholder="Nombre del autor" maxLength="16" onChange={handleForm} value={props.userData.name}/>
         <input className="addForm__input" type="text" name="country" id="country" placeholder="Pais del autor" maxLength="15" onChange={handleForm}  value={props.userData.country}/>
       </fieldset>
-      <div className="card-url-box">{props.url}</div>
+      <div className="loader-box">
+        
+          <div className={`loader ${!loader ? "hidden" : ""}`}></div>
+        
+      </div>
+      <div className={`card-url-box ${loader ? "hidden" : ""}`}>
+        {props.url}
+      </div>
+      
       <fieldset className="addForm__group--upload">
              
         <GetAvatar  updateAvatar={props.updateAvatar} id="image" text="Subir foto del libro"/>
