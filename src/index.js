@@ -6,10 +6,11 @@ const mysql = require("mysql2/promise")
 //crear mi server
 const server = express();
 server.use(cors());
-server.use(express.json());
+server.use(express.json( {limit: '20mb' }));
 
 //configuración del servidor
 const PORT = 5001;
+
 server.listen(PORT, () => {
     console.log(`server is running http://localhost:${PORT}`);
 });
@@ -42,18 +43,23 @@ server.get("/getBooks", async (req, res) => {
 
  //endpoint para añadir libro
 server.post("/addBook", async (req, res) => {
+    console.log(req.body);
     const data = req.body;
     const conn = await connectDB();
     const insertAuthor = 'INSERT INTO author (name, country, photo) values(?, ?, ?)';
-    const [resultAuthor] = await conn.query(insertAuthor, [data.name, data.country, data.img]);
+    const [resultAuthor] = await conn.query(insertAuthor, [data.name, data.country, data.photo]);
     //insertId
     const insertProject = 'INSERT INTO Book (title, published, shop, reviews, genre, descr, image, fkAuthor) values (?, ?, ?, ?, ?, ?, ?, ?)';
     const [resultProject] = await conn.query(insertProject, [data.title, data.published, data.shop, data.reviews, data.genre, data.descr, data.image, data.fkAuthor, resultAuthor.insertId])
+
+    const requiredFields = ["name", "country", "photo", "title", "published", "shop", "reviews", "genre", "descr", "image"]; for (const field of requiredFields) { if (!data[field]) { return res.status(400).json({ success: false, message: `El campo ${field} es requerido` }); } }
 
     //insert BD
     res.json({ 
         bookURL: `http://localhost:5001/detailBook/${resultProject.insertId}`,
         success: true  })
+    
+    conn.end()
 });
 
 
