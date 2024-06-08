@@ -15,8 +15,8 @@ const defaults = {
   origin: { y: 0.3 }
 };
 
-function Like({ onLike }) {
-  const [liked, setLiked] = useState(false);
+const Like = ({ isLiked, onLike }) => {
+  const [liked, setLiked] = useState(isLiked);
 
   function shoot() {
     confetti({
@@ -33,15 +33,16 @@ function Like({ onLike }) {
     if (onLike) onLike();
   }
 
-  function onClick() {
+  function handleLike() {
     if (!liked) {
       shoot();
     }
     setLiked(!liked);
+    if (onLike) onLike();
   }
 
   return (
-    <button className="like__button" onClick={onClick}>
+    <button className="like__button" onClick={handleLike}>
       <span>📖</span>
       <span>{liked ? 'Unlike' : 'Like'}</span>
     </button>

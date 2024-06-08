@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 import CardPreview from './CardPreview';
 import image from "../images/Imagenlist.png";
 
-const List = ({ userData, addFavBook }) => {
+const List = ({ userData, addFavBook, favBooks }) => {
   const [listBooks, setListBooks] = useState([]);
-  console.log(listBooks);
+
 
   useEffect(() => {
     fetch("http://localhost:5001/getBooks")
@@ -17,6 +17,7 @@ const List = ({ userData, addFavBook }) => {
         setListBooks(info.data);
       });
   }, []);
+
   const handleLike = (book) => {
     addFavBook(book);
   };
@@ -33,10 +34,11 @@ const List = ({ userData, addFavBook }) => {
         <div className='cards-container'>
           {listBooks.map((book) => (
             <CardPreview
-              key={book.id}
-              userData={book}
-              onLike={handleLike}
-            />
+            key={book.id}
+            userData={book}
+            onLike={handleLike}
+            isLiked={false}
+          />
           ))}
         </div>
         <img className='list-img' src={image} alt="" />

@@ -24,8 +24,8 @@ function App() {
 
   const [url, setUrl] = useState("");
   const [favBooks, setFavBooks] = useState(() => {
-    const saved = localStorage.getItem("favBooks");
-    return saved ? JSON.parse(saved) : [];
+    const savedFavBooks = localStorage.getItem("favBooks");
+    return savedFavBooks ? JSON.parse(savedFavBooks) : [];
   });
 
   useEffect(() => {
@@ -41,7 +41,9 @@ function App() {
   };
 
   const addFavBook = (book) => {
-    setFavBooks([...favBooks, book]);
+    const updatedFavBooks = [...favBooks, book];
+    setFavBooks(updatedFavBooks);
+    localStorage.setItem("favBooks", JSON.stringify(updatedFavBooks));
   };
 
   return (
@@ -67,7 +69,7 @@ function App() {
           />
           <Route
             path="/proyectos"
-            element={<List userData={userData} addFavBook={addFavBook} />}
+            element={<List userData={userData} addFavBook={addFavBook} favBooks={favBooks} />}
           />
           <Route
             path="/listafavoritos"
