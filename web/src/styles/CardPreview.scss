@@ -1,4 +1,5 @@
 .card {
+    min-width: 278px;
     position: relative;
     z-index: 2;
     box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -68,21 +69,30 @@
   }
   
   .card .card__job {
+    text-align: center;
     margin-bottom: 0.2rem;
+    max-width: 145.70px;
+    word-wrap: break-word;
   }
   
   .card .card__name {
     font: var(--font-card-title);
     margin-bottom: .2rem;
+    max-width: 145.70px;
+    word-wrap: break-word;
   }
 
   .card .book__title {
+    display: inline-block;
+    max-width: 270px;
     font: var(--font-card-title);
     margin-bottom: .2rem;
     font-size: 20px;
   }
   
   .card .card__project {
+    max-width: 270px;
+    word-wrap: break-word;
     margin-right: 10px;
   }
   
@@ -93,10 +103,14 @@
     margin-bottom: .8rem;
   }
   
-  .card .card__descriptionTitle {
+  .card .cardcriptionTitle {
     padding-bottom: 10px;
     font-weight: 400;
     // text-transform: capitalize;
+  }
+
+  .card__description {
+    padding-right: 10px;
   }
   
   .card .card__technicalInfo {

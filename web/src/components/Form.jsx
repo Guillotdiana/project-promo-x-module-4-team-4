@@ -13,16 +13,16 @@ const Form = (props ) => {
   }
 
     const fieldNames = {
-    title: "Título del libro",
-    published: "Año de publicación" ,
-    shop: "Obtener",
-    reviews: "Reseñas",
-    genre: "Género del libro",
-    descr: "Cuéntanos que te ha parecido",
-    name: "Nombre del autor",
-    country: "Pais del autor",
-    photo: "Foto del autor",
-    image: "Portada del libro"
+    title: "título del libro",
+    published: "año de publicación" ,
+    shop: "obtener",
+    reviews: "reseñas",
+    genre: "género del libro",
+    descr: "descripción",
+    name: "nombre del autor",
+    country: "país del autor",
+    photo: "foto del autor",
+    image: "portada del libro"
   };
 
   const validateFields = (userData) => {
@@ -60,11 +60,11 @@ const Form = (props ) => {
       <h2 className="title">Información</h2>
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre el libro</legend>
-        <input className="addForm__input" type="text" name="title" id="title" placeholder="Título del libro" maxLength="24" onChange={handleForm} value={props.userData.title} />
+        <input className="addForm__input" type="text" name="title" id="title" placeholder="Título del libro" maxLength="83" onChange={handleForm} value={props.userData.title} />
         <input className="addForm__input" type="text" name="published" id="published" placeholder="Año de publicación" maxLength="4" onChange={handleForm} value={props.userData.published}/>
         <div className="addForm__2col">
-          <input className="addForm__input" type="url" name="shop" id="shop" placeholder="Obtener" maxLength="40" onChange={handleForm} value={props.userData.shop} />
-          <input className="addForm__input" type="url" name="reviews" id="reviews" placeholder="Reseñas" maxLength="70" onChange={handleForm} value={props.userData.reviews} />
+          <input className="addForm__input" type="url" name="shop" id="shop" placeholder="Obtener" maxLength="1000" onChange={handleForm} value={props.userData.shop} />
+          <input className="addForm__input" type="url" name="reviews" id="reviews" placeholder="Reseñas" maxLength="1000" onChange={handleForm} value={props.userData.reviews} />
         </div>      
         <select className="addForm__input " name="genre" id="genre" onChange={handleForm} value={props.userData.genre} required>
           <option value="">Selecciona el género literario</option >
@@ -105,13 +105,13 @@ const Form = (props ) => {
           <option value="Zombie">Zombie</option>
           </select>  
         {/* <input className="addForm__input" type="text" name="genre" id="genre" placeholder="Género del libro" maxLength="20" onChange={handleForm} value={props.userData.genre}/> */}
-        <textarea className="addForm__input" type="text" name="descr" id="descr" placeholder="Cuéntanos qué te ha parecido" maxLength="40" rows="5" onChange={handleForm} value={props.userData.descr}></textarea>
+        <textarea className="addForm__input" type="text" name="descr" id="descr" placeholder="Cuéntanos qué te ha parecido" maxLength="255" rows="5" onChange={handleForm} value={props.userData.descr}></textarea>
       </fieldset>
 
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre la autora</legend>
-        <input className="addForm__input" type="text" name="name" id="name" placeholder="Nombre del autor" maxLength="16" onChange={handleForm} value={props.userData.name}/>
-        <input className="addForm__input" type="text" name="country" id="country" placeholder="Pais del autor" maxLength="15" onChange={handleForm}  value={props.userData.country}/>
+        <input className="addForm__input" type="text" name="name" id="name" placeholder="Nombre del autor" maxLength="52" onChange={handleForm} value={props.userData.name}/>
+        <input className="addForm__input" type="text" name="country" id="country" placeholder="País del autor" maxLength="52" onChange={handleForm}  value={props.userData.country}/>
       </fieldset>
       <div className="loader-box">
         
