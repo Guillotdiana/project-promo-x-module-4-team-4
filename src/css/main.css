@@ -1,0 +1,15 @@
+.body {
+    background-image: url(../css/images/fondo-project-4.jpg)
+}
+
+.header {
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    background-color: white;
+  }
+  
