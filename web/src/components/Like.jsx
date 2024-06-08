@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import confetti from "https://esm.run/canvas-confetti@1";
 
@@ -16,7 +15,7 @@ const defaults = {
   origin: { y: 0.3 }
 };
 
-function Button() {
+function Like({ onLike }) {
   const [liked, setLiked] = useState(false);
 
   function shoot() {
@@ -31,64 +30,22 @@ function Button() {
       flat: true
     });
 
-    // confetti({
-    //   ...defaults,
-    //   particleCount: 15,
-    //   scalar: scalar / 2,
-    //   shapes: ['circle']
-    // });
+    if (onLike) onLike();
   }
 
   function onClick() {
     if (!liked) {
-      shoot(); // Llamar a la función shoot para mostrar los emojis de unicornio
+      shoot();
     }
     setLiked(!liked);
   }
 
   return (
     <button className="like__button" onClick={onClick}>
-      <span>📖</span> {/* Cambiado el emoji en el botón */}
+      <span>📖</span>
       <span>{liked ? 'Unlike' : 'Like'}</span>
     </button>
   );
 }
 
-export default Button;
-
-
-
-
-
-
-
-// // import { createRoot } from "https://esm.run/react-dom@18/client";
-// import confetti from "https://esm.run/canvas-confetti@1";
-// import { useState } from "react";
-
-// function Button() {
-//     const [liked, setLiked] = useState(false);
-
-  
-//     function onClick() {
-//       if (!liked) {
-//         confetti({
-//           particleCount: 150,
-//           spread: 60
-//         });
-//       }
-//       setLiked(!liked);
-//     }
-  
-//     return (
-//       <button className="like__button" onClick={onClick}>
-//         <span>🎉</span>
-//         <span>{liked ? 'Unlike' : 'Like'}</span>
-//       </button>
-//     );
-//   }
-  
-//   export default Button;
-
-
-// // createRoot(document.getElementById("root")).render(<Button />);
+export default Like;

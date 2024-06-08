@@ -1,42 +1,45 @@
-import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom'
-import CardPreview from './CardPreview'
+import { Link } from 'react-router-dom';
+import CardPreview from './CardPreview';
 import image from "../images/Imagenlist.png";
 
-const List = ({userData}) => {
-  
-  const [listBooks, setListBooks] = useState([])
+const List = ({ userData, addFavBook }) => {
+  const [listBooks, setListBooks] = useState([]);
   console.log(listBooks);
 
   useEffect(() => {
     fetch("http://localhost:5001/getBooks")
-    .then((response) => response.json())
-    .then(info => {
-      setListBooks(info.data)
-    })
-  }, [])
+      .then((response) => response.json())
+      .then(info => {
+        setListBooks(info.data);
+      });
+  }, []);
 
   return (
     <div>
-      <Header/>
+      <Header />
       <div className='list__buttons'>
         <Link to="/crear"><button className='button--link'>Crear Tarjeta</button></Link>
-        <Link to="/listaFavoritos"><button className='button--link'>Mis favoritos</button></Link>
+        <Link to="/listafavoritos"><button className='button--link'>Mis favoritos</button></Link>
       </div>
-      <div className='list-page' >
+      <div className='list-page'>
         <div className='cards-container'>
-          {listBooks.map((userData) => <CardPreview key={userData.id} userData={userData}/>)}
-          
+          {listBooks.map((book) => (
+            <CardPreview
+              key={book.id}
+              userData={book}
+              onLike={addFavBook}
+            />
+          ))}
         </div>
-        <img className='list-img'  src={image} alt="" />
-   
+        <img className='list-img' src={image} alt="" />
       </div>
-      <Footer/>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default List
+export default List;
