@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import confetti from "https://esm.run/canvas-confetti@1";
 
@@ -50,9 +49,3 @@ function Like({ onLike }) {
 }
 
 export default Like;
-
-
-
-
-
-

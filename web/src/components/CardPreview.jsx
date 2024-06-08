@@ -2,7 +2,17 @@ import Profile from "./Profile";
 import Like from "./Like";
 
 const CardPreview = ({ userData, onLike }) => {
+
+  if (!userData) {
+    return null;
+  }
   const { title, published, shop, reviews, genre, descr, name, country, image, photo } = userData;
+
+  const handleLike = () => {
+    if (typeof onLike === 'function') {
+      onLike(userData);
+    }
+  };
 
   return (
     <article className="card">
@@ -25,7 +35,8 @@ const CardPreview = ({ userData, onLike }) => {
           <a className="icon icon__github" href={shop || "#"} title="Haz click para obtener el libro" target="_blank">
             Enlace al libro
           </a>
-          {onLike && <Like onLike={() => onLike(userData)} />}
+          <Like onLike={handleLike} />
+
         </div>
       </div>
     </article>
@@ -33,3 +44,4 @@ const CardPreview = ({ userData, onLike }) => {
 };
 
 export default CardPreview;
+

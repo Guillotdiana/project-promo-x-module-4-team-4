@@ -1,3 +1,10 @@
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
+import CardPreview from './CardPreview';
+import image from "../images/Imagenlist.png";
 
 const List = ({ userData, addFavBook }) => {
   const [listBooks, setListBooks] = useState([]);
@@ -10,6 +17,10 @@ const List = ({ userData, addFavBook }) => {
         setListBooks(info.data);
       });
   }, []);
+  const handleLike = (book) => {
+    addFavBook(book);
+  };
+
 
   return (
     <div>
@@ -24,7 +35,7 @@ const List = ({ userData, addFavBook }) => {
             <CardPreview
               key={book.id}
               userData={book}
-              onLike={addFavBook}
+              onLike={handleLike}
             />
           ))}
         </div>
