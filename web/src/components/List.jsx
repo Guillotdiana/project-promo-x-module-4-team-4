@@ -1,13 +1,7 @@
-// List.js - Actualizamos la función addFavBook para verificar si el libro ya está en favoritos.
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
-import CardPreview from './CardPreview';
-import image from "../images/Imagenlist.png";
 
-const List = ({ userData, addFavBook, favBooks }) => {
+const List = ({ userData, addFavBook }) => {
   const [listBooks, setListBooks] = useState([]);
+  console.log(listBooks);
 
   useEffect(() => {
     fetch("http://localhost:5001/getBooks")
@@ -30,8 +24,7 @@ const List = ({ userData, addFavBook, favBooks }) => {
             <CardPreview
               key={book.id}
               userData={book}
-              onLike={() => addFavBook(book)}
-              isLiked={favBooks.some((favBook) => favBook.id === book.id)} // Verificar si ya está en favoritos
+              onLike={addFavBook}
             />
           ))}
         </div>

@@ -1,11 +1,11 @@
-// FavList.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import CardPreview from './CardPreview';
 
-const FavList = ({ favBooks, removeFavBook }) => {
+const FavList = ({ favBooks }) => {
   return (
     <div>
       <Header />
@@ -16,12 +16,7 @@ const FavList = ({ favBooks, removeFavBook }) => {
       <h1 className='favlist'>Tus libros favoritos</h1>
       <div className='favlist__list'>
         {favBooks.map((book, index) => (
-          <CardPreview
-            key={index}
-            userData={book}
-            onLike={() => removeFavBook(book)}
-            isLiked={true} // Siempre es "Unlike" en la lista de favoritos
-          />
+          <CardPreview key={index} userData={book} />
         ))}
       </div>
       <Footer />

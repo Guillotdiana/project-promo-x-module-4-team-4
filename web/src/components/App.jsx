@@ -1,4 +1,3 @@
-// App.js
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
 import Header from "./Header";
@@ -42,15 +41,7 @@ function App() {
   };
 
   const addFavBook = (book) => {
-    const isAlreadyFav = favBooks.some((favBook) => favBook.id === book.id);
-    if (!isAlreadyFav) {
-      setFavBooks([...favBooks, book]);
-    }
-  };
-
-  const removeFavBook = (bookToRemove) => {
-    const updatedFavBooks = favBooks.filter((book) => book.id !== bookToRemove.id);
-    setFavBooks(updatedFavBooks);
+    setFavBooks([...favBooks, book]);
   };
 
   return (
@@ -76,11 +67,11 @@ function App() {
           />
           <Route
             path="/proyectos"
-            element={<List userData={userData} addFavBook={addFavBook} favBooks={favBooks} />}
+            element={<List userData={userData} addFavBook={addFavBook} />}
           />
           <Route
             path="/listafavoritos"
-            element={<FavList favBooks={favBooks} removeFavBook={removeFavBook} />}
+            element={<FavList favBooks={favBooks} />}
           />
         </Routes>
       </div>

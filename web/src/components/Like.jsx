@@ -16,7 +16,7 @@ const defaults = {
   origin: { y: 0.3 }
 };
 
-function Button() {
+function Like({ onLike }) {
   const [liked, setLiked] = useState(false);
 
   function shoot() {
@@ -31,24 +31,25 @@ function Button() {
       flat: true
     });
 
+    if (onLike) onLike();
   }
 
   function onClick() {
     if (!liked) {
-      shoot(); // Llamar a la función shoot para mostrar los emojis de unicornio
+      shoot();
     }
     setLiked(!liked);
   }
 
   return (
     <button className="like__button" onClick={onClick}>
-      <span>📖</span> {/* Cambiado el emoji en el botón */}
+      <span>📖</span>
       <span>{liked ? 'Unlike' : 'Like'}</span>
     </button>
   );
 }
 
-export default Button;
+export default Like;
 
 
 
