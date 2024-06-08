@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import confetti from "https://esm.run/canvas-confetti@1";
 
@@ -15,7 +16,7 @@ const defaults = {
   origin: { y: 0.3 }
 };
 
-function Like({ onLike }) {
+function Button() {
   const [liked, setLiked] = useState(false);
 
   function shoot() {
@@ -30,22 +31,27 @@ function Like({ onLike }) {
       flat: true
     });
 
-    if (onLike) onLike();
   }
 
   function onClick() {
     if (!liked) {
-      shoot();
+      shoot(); // Llamar a la función shoot para mostrar los emojis de unicornio
     }
     setLiked(!liked);
   }
 
   return (
     <button className="like__button" onClick={onClick}>
-      <span>📖</span>
+      <span>📖</span> {/* Cambiado el emoji en el botón */}
       <span>{liked ? 'Unlike' : 'Like'}</span>
     </button>
   );
 }
 
-export default Like;
+export default Button;
+
+
+
+
+
+
