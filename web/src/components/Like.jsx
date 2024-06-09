@@ -15,8 +15,8 @@ const defaults = {
   origin: { y: 0.3 }
 };
 
-const Like = ({ isLiked, onLike }) => {
-  const [liked, setLiked] = useState(isLiked);
+const Like = ({ onLike }) => {
+  const [liked, setLiked] = useState();
 
   function shoot() {
     confetti({

@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import CardPreview from './CardPreview';
 import image from "../images/Imagenlist.png";
 
-const List = ({ userData, addFavBook, favBooks }) => {
+const List = ({ addFavBook }) => {
+
   const [listBooks, setListBooks] = useState([]);
 
 
@@ -37,7 +38,6 @@ const List = ({ userData, addFavBook, favBooks }) => {
             key={book.id}
             userData={book}
             onLike={handleLike}
-            isLiked={false}
           />
           ))}
         </div>
