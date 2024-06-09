@@ -27,6 +27,7 @@
     &_subtitle {
         font-family: "Playfair Display", serif;
         margin-top: 20px;
+        margin-bottom: 30px;
         color: #452C73;
         font-style: italic;
         font-size: 1.1rem;
@@ -39,6 +40,8 @@
 
         @media screen and (min-width: 1024px){
             font-size: 1.15rem;
+            margin-top: 5px;
+            margin-bottom: 40px;
         }
     }
 
@@ -89,7 +92,7 @@
 
 .logoDiv {
     margin: 20px;
-    width: 200px;
+    width: 300px;
 
     @media screen and (width> 767px) {
         width: 400px;  
@@ -97,7 +100,7 @@
     }
 
     @media screen and (min-width: 1024px){
-        width: 280px;
+        width: 320px;
     }
 
     &_logo {

@@ -10,7 +10,7 @@ import FavList from "./FavlList";
 
 function App() {
 
-  const [userData, setUserData] = useState({title: "", published: "", shop: "", reviews: "", genre: "", descr: "", author: "", country: "", image: "", photo: ""});
+  const [userData, setUserData] = useState({title: "", published: "", shop: "", reviews: "", genre: "", descr: "", name: "", country: "", image: "", photo: ""});
 
   const [url, setUrl] = useState("");
 

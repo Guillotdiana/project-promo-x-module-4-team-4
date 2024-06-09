@@ -4,7 +4,7 @@ import Footer from './Footer'
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import CardPreview from './CardPreview'
-import image from "../images/Imagenlist.jpg";
+import image from "../images/Imagenlist.png";
 
 const List = ({userData, setFilterList}) => {
   
