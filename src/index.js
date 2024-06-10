@@ -10,6 +10,7 @@ const server = express();
 server.use(cors());
 server.use(express.json( {limit: '20mb' }));
 server.set("view engine", "ejs");
+require('dotenv').config();
 
 //configuración del servidor
 const PORT = 5001;
@@ -26,8 +27,8 @@ async function connectDB(){
     const conex = await mysql.createConnection({  
       
         host: "sql.freedb.tech",
-        user: "freedb_books4you_admin",
-        password: "!q*ENzEAC6rdCgb",
+        user: process.env.DB_USER,
+        password: process.env.DB_PASS,
         database: "freedb_books4you"
     });
     await conex.connect() 
