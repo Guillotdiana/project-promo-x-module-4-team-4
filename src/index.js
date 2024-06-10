@@ -36,7 +36,6 @@ server.get("/getBooks", async (req, res) => {
     const conn = await connectDB();
     const select = `SELECT * FROM Book INNER JOIN author on Book.fkAuthor= author.idAuthor`;
     const [result] = await conn.query(select);
-    
     res.json({ data: result, count: result.length });
     conn.end();
 });
@@ -49,10 +48,24 @@ server.post("/addBook", async (req, res) => {
     const insertAuthor = 'INSERT INTO author (name, country, photo) values(?, ?, ?)';
     const [resultAuthor] = await conn.query(insertAuthor, [data.name, data.country, data.photo]);
     //insertId
+    const authorId = resultAuthor.insertId;
     const insertProject = 'INSERT INTO Book (title, published, shop, reviews, genre, descr, image, fkAuthor) values (?, ?, ?, ?, ?, ?, ?, ?)';
+<<<<<<< HEAD
     const [resultProject] = await conn.query(insertProject, [data.title, data.published, data.shop, data.reviews, data.genre, data.descr, data.image, data.fkAuthor, resultAuthor.insertId])
 
     const requiredFields = ["name", "country", "photo", "title", "published", "shop", "reviews", "genre", "descr", "image"]; for (const field of requiredFields) { if (!data[field]) { return res.status(400).json({ success: false, message: `El campo ${field} es obligatorio` }); } }
+=======
+    const [resultProject] = await conn.query(insertProject, 
+        [data.title, 
+            data.published, 
+            data.shop, 
+            data.reviews, 
+            data.genre, 
+            data.descr, 
+            data.image, 
+            authorId])
+    const requiredFields = ["name", "country", "photo", "title", "published", "shop", "reviews", "genre", "descr", "image"]; for (const field of requiredFields) { if (!data[field]) { return res.status(400).json({ success: false, message: `El campo ${field} es requerido` }); } }
+>>>>>>> fav2
 
     //insert BD
     res.json({ 
