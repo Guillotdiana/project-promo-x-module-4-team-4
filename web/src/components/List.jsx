@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import CardPreview from './CardPreview'
 import image from "../images/Imagenlist.png";
 
-const List = () => {
+const List = ({ addFavBook }) => {
   
   const [listBooks, setListBooks] = useState([]);
   const [filterList, setFilterList] = useState("all");
@@ -30,6 +30,10 @@ const List = () => {
       return book.genre === filterList
     }
   });
+
+    const handleLike = (book) => {
+    addFavBook(book);
+  };
 
   return (
     <div>
@@ -80,7 +84,13 @@ const List = () => {
       </form>
       <div className='list-page' >
         <div className='cards-container'>
-          {filterBook.map((userData,i) => <CardPreview  key={i} userData={userData}/>)}
+          {filterBook.map((book) =>{
+         <CardPreview
+            key={book.id}
+            userData={book}
+            onLike={handleLike}
+          />
+          } )}
           
         </div>
         <div>
@@ -93,3 +103,49 @@ const List = () => {
 }
 
 export default List
+
+
+
+// const List = ({ addFavBook }) => {
+
+//   const [listBooks, setListBooks] = useState([]);
+
+
+//   useEffect(() => {
+//     fetch("http://localhost:5001/getBooks")
+//       .then((response) => response.json())
+//       .then(info => {
+//         setListBooks(info.data);
+//       });
+//   }, []);
+
+//   const handleLike = (book) => {
+//     addFavBook(book);
+//   };
+
+
+//   return (
+//     <div>
+//       <Header />
+//       <div className='list__buttons'>
+//         <Link to="/crear"><button className='button--link'>Crear Tarjeta</button></Link>
+//         <Link to="/listafavoritos"><button className='button--link'>Mis favoritos</button></Link>
+//       </div>
+//       <div className='list-page'>
+//         <div className='cards-container'>
+//           {listBooks.map((book) => (
+//             <CardPreview
+//             key={book.id}
+//             userData={book}
+//             onLike={handleLike}
+//           />
+//           ))}
+//         </div>
+//         <img className='list-img' src={image} alt="" />
+//       </div>
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default List;
