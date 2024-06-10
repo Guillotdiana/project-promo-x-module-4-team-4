@@ -53,7 +53,7 @@ Para ejecutar este proyecto de forma local, sigue estos pasos:
 3. Instala las dependencias:
   ```bash
     npm install
-  ```bash
+  ```
 
 4. Abre tu navegador y ve a `http://localhost:3000` para ver la aplicación en acción.
 
