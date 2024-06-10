@@ -58,26 +58,6 @@ server.post("/addBook", async (req, res) => {
     res.json({ 
         bookURL: `http://localhost:5001/detailBook/${resultProject.insertId}`,
         success: true  })
-
-    // const requiredFields = ["name", "country", "photo", "title", "published", "shop", "reviews", "genre", "descr", "image"];
-
-    // const fields = "";
-    
-    // for (const field of requiredFields) { 
-    //     if (!data[field]) {
-    //          fields += field;
-    //         } 
-    //     };
-
-    // if (!fields) {
-    //     res.json({ 
-    //         bookURL: `http://localhost:5001/detailBook/${resultProject.insertId}`,
-    //         success: true  })
-    // } 
-    
-    // if (fields) {
-    //     res.status(400).json({ success: false, message: `El campo ${fields} es obligatorio` }); 
-    // }
             
     conn.end()
 });
