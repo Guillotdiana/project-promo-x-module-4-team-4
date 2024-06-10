@@ -18,7 +18,7 @@ const FavList = ({ favBooks }) => {
         <img className='list-img' src={image} alt="" />
         <div className='favlist__list'>
           {favBooks.map((book, index) => (
-            <CardPreview key={index} userData={book} />
+            <Link className="card-link" to={`/detailBook/${book.idBook}`} key={index} target="_blank"><CardPreview userData={book} /></Link>
           ))}
       </div>
       </div>

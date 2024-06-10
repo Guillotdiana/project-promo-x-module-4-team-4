@@ -80,7 +80,7 @@ const List = () => {
       </form>
       <div className='list-page' >
         <div className='cards-container'>
-          {filterBook.map((userData,i) => <CardPreview  key={i} userData={userData}/>)}
+          {filterBook.map((userData,i) => <Link className="card-link" to={`/detailBook/${userData.idBook}`} key={i} target="_blank"><CardPreview  userData={userData}/></Link>)}
           
         </div>
         <div>
