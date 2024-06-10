@@ -16,11 +16,11 @@ const FavList = ({ favBooks }) => {
       <h1 className='favlist'>Tus libros favoritos</h1>
       <div className="favlist-container">
         <img className='list-img' src={image} alt="" />
-        <div className='favlist__list'>
+        1<div className='favlist__list'>
           {favBooks.map((book, index) => (
             <CardPreview key={index} userData={book} />
           ))}
-      </div>
+        </div>
       </div>
 
       <Footer />
