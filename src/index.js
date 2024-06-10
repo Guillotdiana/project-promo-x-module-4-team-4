@@ -76,7 +76,7 @@ server.post("/addBook", async (req, res) => {
 });
 
 //motor de plantilla para renderizar el detalle
-server.get("/detail/:idBook", async (req, res) => {
+server.get("/detailBook/:idBook", async (req, res) => {
     const conn = await connectDB();
     const {idBook} = req.params;
     const findBook = 'SELECT * FROM Book INNER JOIN author on Book.fkAuthor = author.idAuthor WHERE idBook = ?';

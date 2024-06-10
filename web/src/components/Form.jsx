@@ -44,7 +44,7 @@ const Form = (props ) => {
     } else {
       fetchData(props.userData).then((response) => {
         if (response.success) {
-          props.setUrl(<a className="card-url" href={response.cardURL} target="_blank">◇ Click aquí para ver tu tarjeta ◇</a>);
+          props.setUrl(<a className="card-url" href={response.bookURL} target="_blank">◇ Click aquí para ver tu tarjeta ◇</a>);
           setLoader(false);
         } else if (!response.success) {
           props.setUrl(<p>Hubo un error al generar la URL.</p>);
