@@ -14,7 +14,7 @@ function App() {
 
   const [url, setUrl] = useState("");
 
-  const [filterList, setFilterList] = useState("all")
+
 
   
   const changeData = (fieldName,inputValue) => {
@@ -28,9 +28,6 @@ function App() {
     setUserData({...userData, [image]: avatar});
   };
 
-  const filterBook = filterList === "all"? [userData] : [userData].filter(book => book.genre === filterList);
-
-  
 
   return (
   <>
@@ -45,7 +42,7 @@ function App() {
        <Footer/>
       </>
     }/>
-    <Route path="/proyectos" element={<List userData={userData} setFilterList={setFilterList} filterList={filterList} />}/>
+    <Route path="/proyectos" element={<List />}/>
     <Route path="/listafavoritos" element={<FavList userData={userData}/>}/>
     </Routes>
    </div>

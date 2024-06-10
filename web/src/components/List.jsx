@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom'
 import CardPreview from './CardPreview'
 import image from "../images/Imagenlist.png";
 
-const List = ({userData, setFilterList}) => {
+const List = () => {
   
-  const [listBooks, setListBooks] = useState([])
+  const [listBooks, setListBooks] = useState([]);
+  const [filterList, setFilterList] = useState("all");
 
   useEffect(() => {
     fetch("http://localhost:5001/getBooks")
@@ -21,6 +22,14 @@ const List = ({userData, setFilterList}) => {
   const handleChange = (ev) =>{
     setFilterList(ev.target.value)
   }
+
+  const filterBook = listBooks.filter(book =>{
+    if(filterList === "all"){
+      return true
+    }else{
+      return book.genre === filterList
+    }
+  });
 
   return (
     <div>
@@ -70,7 +79,7 @@ const List = ({userData, setFilterList}) => {
       </form>
       <div className='list-page' >
         <div className='cards-container'>
-          {listBooks.map((userData,i) => <CardPreview  key={i} userData={userData}/>)}
+          {filterBook.map((userData,i) => <CardPreview  key={i} userData={userData}/>)}
           
         </div>
 
