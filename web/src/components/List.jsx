@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import CardPreview from './CardPreview'
 import image from "../images/Imagenlist.png";
 
-const List = ({ addFavBook }) => {
+const List = ({addFavBook}) => {
   
   const [listBooks, setListBooks] = useState([]);
   const [filterList, setFilterList] = useState("all");
@@ -33,7 +33,7 @@ const List = ({ addFavBook }) => {
     }
   });
 
-    const handleLike = (book) => {
+  const handleLike = (book) => {
     addFavBook(book);
   };
 
@@ -90,7 +90,7 @@ const List = ({ addFavBook }) => {
           <div className={`loader-list ${!loaderList ? "hidden" : ""}`}></div>
         </div>
         <div className='cards-container'>
-          {filterBook.map((userData,i) => <a className="card-link" href={`http://localhost:5001/detailBook/${userData.idBook}`} key={i} target="_blank"><CardPreview  userData={userData}/></a>)}
+          {filterBook.map((userData,i) => <a className="card-link" href={`http://localhost:5001/detailBook/${userData.idBook}`} key={i} target="_blank"><CardPreview onLike={handleLike}  userData={userData}/></a>)}
           
         </div>
         <div>
@@ -103,49 +103,3 @@ const List = ({ addFavBook }) => {
 }
 
 export default List
-
-
-
-// const List = ({ addFavBook }) => {
-
-//   const [listBooks, setListBooks] = useState([]);
-
-
-//   useEffect(() => {
-//     fetch("http://localhost:5001/getBooks")
-//       .then((response) => response.json())
-//       .then(info => {
-//         setListBooks(info.data);
-//       });
-//   }, []);
-
-//   const handleLike = (book) => {
-//     addFavBook(book);
-//   };
-
-
-//   return (
-//     <div>
-//       <Header />
-//       <div className='list__buttons'>
-//         <Link to="/crear"><button className='button--link'>Crear Tarjeta</button></Link>
-//         <Link to="/listafavoritos"><button className='button--link'>Mis favoritos</button></Link>
-//       </div>
-//       <div className='list-page'>
-//         <div className='cards-container'>
-//           {listBooks.map((book) => (
-//             <CardPreview
-//             key={book.id}
-//             userData={book}
-//             onLike={handleLike}
-//           />
-//           ))}
-//         </div>
-//         <img className='list-img' src={image} alt="" />
-//       </div>
-//       <Footer />
-//     </div>
-//   );
-// };
-
-// export default List;
