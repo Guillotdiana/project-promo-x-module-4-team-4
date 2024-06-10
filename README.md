@@ -47,7 +47,7 @@ Para ejecutar este proyecto de forma local, sigue estos pasos:
 1. Clona el repositorio:
    
    ```bash
-    git clone https://github.com/tu-usuario/books4you.git](https://github.com/Guillotdiana/project-promo-x-module-4-team-4.git
+    git clone https://github.com/Guillotdiana/project-promo-x-module-4-team-4.git
    ```
    
 3. Ve al directorio del proyecto
