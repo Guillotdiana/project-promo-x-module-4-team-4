@@ -10,19 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/main.css">
     <title>Books4You</title>
 </head>
 <body class="body">
   <section class="preview">
     <div class="mockup"></div>
-    <div class="projectImage"
-    style=  "background-image: url(<%=detail.image%>)"  ></div>
+    <div class="projectImage" style="background:url('<%-detail.image%>');" ></div>
     <div class="projectImagePlaceholder"></div>
     <article class="card">
       <h2 class="card__projectTitle"><span class="card__projectTitle--text">Tarjeta del libro</span></h2>
       <div class="card__author">
-        <div class="card__authorPhoto"  style=  "background-image: url(<%=detail.image%>)" >
+        <div class="card__authorPhoto" background="<%=detail.photo%>" >
           <div
             class="profile__avatar"
            
@@ -38,7 +38,7 @@
         <p class="card__description"><%=detail.descr%></p>
         <div class="card__technicalInfo">
           <p class="card__technologies"><%=detail.genre%></p>
-          <a class="icon icon__www" href="<%=detail.review%>" title="Haz click para ver reseñas el libro" target="_blank">
+          <a class="icon icon__www" href="<%=detail.reviews%>" title="Haz click para ver reseñas el libro" target="_blank">
             Enlace a las reseñas
           </a>
           <a class="icon icon__github" href="<%=detail.shop%>" title="Haz click para obtener el libro" target="_blank">
@@ -50,8 +50,5 @@
       </div>
     </article>
   </section>
-
-   
-
 </body>
 </html>

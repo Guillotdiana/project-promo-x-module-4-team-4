@@ -1,15 +1,265 @@
-.body {
-    background-image: url(../css/images/fondo-project-4.jpg)
-}
 
-.header {
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2.5rem;
-    background-color: white;
+
+:root {
+    
+
+    /* // Colores nuevos */
+    --beige: #E6DBC8;
+    --brown: #A69183;
+    --dark-brown: #382923;
+    --grey: #EBEBEB;
+    --ligth-purple: #b299d3;
+    --purple: #452C73;
+    --green: #B0B861;
+
+
+  
+    /* COLORS */
+  
+
+
+    --color-black: #000000;
+    --color-black-80: rgba(0, 0, 0, 0.8);
+    --color-greyish-brown: #505050;
+    --color-greyish-brown-88: rgba(62, 62, 62, 0.88);
+    --color-dusk: #A69183;;
+    --color-greyish-brown-two: #575757;
+    --color-dark: #EBEBEB;
+    --color-warm-grey: #909090;
+    --color-white: #ffffff;
+    --color-dark-lilac: #8176af;
+    --color-white-50: rgba(255, 255, 255, 0.7);
+  
+  
+    /* FONTS */
+  
+    --font-title-brand: 300 1.4rem "Roboto", sans-serif;
+    --font-title-biggest: bold 3rem "Playfair Display", serif;
+    --font-title-big: bold 2rem "Playfair Display", serif;
+    --font-title-medium: 300 1.5rem "Playfair Display", serif;
+    --font-text-big: 300 1.2rem "Roboto", serif;
+    --font-normal: normal 11px "Roboto", serif;
+    --font-button: bold 1rem "Playfair Display", serif;
+    --font-card-text: 300 .8rem "Roboto", sans-serif;
+    --font-card-section: 300 .8rem "Roboto", sans-serif;
+    --font-card-title: 500 1.2rem "Playfair Display", sans-serif;
+    --font-card-subtitle: 400 1.1rem "Roboto", sans-serif;
+    --font-card-tech: 500 1rem "Roboto", cursive;
   }
   
+  
+  
+  :root {
+    font: var(--font-normal); /* font-size: 10px; */
+    color: var(--color-white);
+
+    a {
+      text-decoration: none;
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+  
+  @media screen and (min-width: 420px) {
+    :root {
+      font-size: 12px;
+    }
+  }
+
+.body {
+    background-image: url(./images/images/fondo-project-4.jpg);
+    padding: 30rem;
+
+}
+
+/* //PREVIEW */
+.preview {
+    position: relative;
+  }
+  
+  .preview .projectImage {
+  
+    width: 43%;
+    aspect-ratio: 1 / 1.35;
+  
+    background-position: top center;
+    background-size: cover;
+    position: absolute;
+    
+    translate: 65% 34.5%;
+    rotate: -18.5deg;
+  }
+  
+  /* //MOCKUP */
+  .preview .mockup {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    outline: solid 2px var(--brown);
+    border-radius: 0.5rem;
+    background-image: url('./images/images/mockup-base.png');
+    background-position: top center;
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .preview .projectImagePlaceholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* // outline: solid 1px pink; */
+    background-image: url('./images/images/mockup-placeholder.png');
+    background-position: top center;
+    background-size: cover;
+    
+  }
+    
+    .preview .card {
+      margin-inline: 20px;
+    
+      transform: translateY(-45px);
+    }
+
+    /* CARD PREVIEW */
+
+    .card {
+        min-width: 278px;
+        position: relative;
+        z-index: 2;
+        box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
+        display: grid;
+        grid-template-columns: 40% 60%;
+        color: #382923;
+        font: var(--font-card-text);
+        border-radius: 2rem;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        /* // border-style: solid; */
+        border-width: 1px;
+        border-image-source: linear-gradient(to bottom, var(--color-white) 0%, rgba(0, 0, 0, 0));
+        border-image-slice: 1;
+        background-color: rgba(#d0d6a9, 0.1);
+        /* // background-image: linear-gradient(to bottom, var(--color-white), var(--color-white)), linear-gradient(to bottom, var(--color-white) 0%, rgba(0, 0, 0, 0)); */
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+      }
+      
+      .card .card__projectTitle {
+        grid-column: 2;
+        position: relative;
+        margin: 15px 10px 1rem 0;
+        text-align: left;
+        /* // text-transform: capitalize; */
+        font: var(--font-card-title);
+        color: var(--purple);
+    
+      }
+
+      .card .card__projectTitle--text {
+        position: relative;
+        /* // padding-inline: 0.1em; */
+        z-index: 1;
+        /* // background-color: var(--color-white); */
+        font-size: 1.3rem;
+      }
+    
+      .card .card__author {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .card .card__authorPhoto {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        /* background-image: url('../images/avatar.webp'); */
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 0.8rem;
+      }
+      
+      .card .card__job {
+        text-align: center;
+        margin-bottom: 0.2rem;
+        max-width: 145.70px;
+        word-wrap: break-word;
+      }
+      
+      .card .card__name {
+        font: var(--font-card-title);
+        margin-bottom: .2rem;
+        max-width: 145.70px;
+        word-wrap: break-word;
+      }
+    
+      .card .book__title {
+        display: inline-block;
+        max-width: 270px;
+        font: var(--font-card-title);
+        margin-bottom: .2rem;
+        font-size: 20px;
+      }
+      
+      .card .card__project {
+        max-width: 270px;
+        word-wrap: break-word;
+        margin-right: 10px;
+      }
+      
+      .card .card__slogan {
+        font: var(--font-card-subtitle);
+        font-size: 13px;
+        margin-top: 0.3rem;
+        margin-bottom: .8rem;
+      }
+      
+      .card .cardcriptionTitle {
+        padding-bottom: 10px;
+        font-weight: 400;
+        /* // text-transform: capitalize; */
+      }
+    
+      .card__description {
+        padding-right: 10px;
+      }
+      
+      .card .card__technicalInfo {
+        display: grid;
+        grid-template-columns: 1fr 2rem 2rem;
+        gap: 1rem;
+        padding-right: 0.5rem;
+        margin-block: 1.8rem;
+      }
+      
+      .card .card__technologies {
+        font: var(--font-card-tech);
+      }
+      
+    
+      /* ICONS */
+      
+      .icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        color: transparent;
+        cursor: pointer;
+      
+        /* // border-radius: 50%;
+        // box-shadow: 0 0 5px 0 var(--color-greyish-brown-two); */
+        
+      }
+      
+      .icon__www {
+        background-image: url('./images/images/icons/globe-solid.svg');
+        background-repeat:no-repeat;
+      }
+      
+      .icon__github {
+        background-image: url('./images/images/icons/github.svg');
+        background-repeat:no-repeat;
+      }
+
+
