@@ -19,6 +19,13 @@
     // background-image: linear-gradient(to bottom, var(--color-white), var(--color-white)), linear-gradient(to bottom, var(--color-white) 0%, rgba(0, 0, 0, 0));
     background-origin: border-box;
     background-clip: content-box, border-box;
+<<<<<<< HEAD
+=======
+    transition: background-color 0.5s;
+    &:hover {
+      background-color: rgba(#fffff6, 0.5);
+  }
+>>>>>>> detail-link
   }
   
   .card .card__projectTitle {
@@ -55,8 +62,13 @@
   .card .card__author {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     text-align: center;
     align-items: center;
+=======
+    align-items: center;
+    text-align: center;
+>>>>>>> detail-link
     margin-bottom: 10px;
   }
   
