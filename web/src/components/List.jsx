@@ -8,7 +8,7 @@ import image from "../images/Imagenlist.png";
 
 const List = ({userData, setFilterList}) => {
   
-  const [listBooks, setListBooks, filterBook] = useState([])
+  const [listBooks, setListBooks] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:5001/getBooks")
@@ -29,16 +29,16 @@ const List = ({userData, setFilterList}) => {
         <Link to="/crear"><button className='button--link'>Crear Tarjeta</button></Link>
         <Link to="/listaFavoritos"><button className='button--link'>Mis favoritos</button></Link>
       </div>
-      <form action="">
-      <select className="addForm__input " name="genre" id="genre" onChange={handleChange}  required>
+      <form className='list-form' action="">
+      <select className='list-select' name="genre" id="genre" onChange={handleChange}   required>
           <option value="all">Selecciona el género literario</option >
-          <option value="aventura">Aventura</option>
-          <option value="autob">Autobiografía</option>
+          <option value="Aventura">Aventura</option>
+          <option value="Autobiografía">Autobiografía</option>
           <option value="biografia">Biografía</option>
           <option value="cienciaFiccion">Ciencia Ficción</option>
           <option value="comedia">Comedia</option>
           <option value="cuento">Cuento</option>
-          <option value="distopia">Distopía</option>
+          <option value="Distopía">Distopía</option>
           <option value="drama">Drama</option>
           <option value="ensayo">Ensayo</option>
           <option value="erotica">Erótica</option>
@@ -70,7 +70,7 @@ const List = ({userData, setFilterList}) => {
       </form>
       <div className='list-page' >
         <div className='cards-container'>
-          {listBooks.map((userData) => <CardPreview key={userData.id} userData={userData}/>)}
+          {listBooks.map((userData,i) => <CardPreview  key={i} userData={userData}/>)}
           
         </div>
 
