@@ -50,22 +50,9 @@ server.post("/addBook", async (req, res) => {
     //insertId
     const authorId = resultAuthor.insertId;
     const insertProject = 'INSERT INTO Book (title, published, shop, reviews, genre, descr, image, fkAuthor) values (?, ?, ?, ?, ?, ?, ?, ?)';
-<<<<<<< HEAD
     const [resultProject] = await conn.query(insertProject, [data.title, data.published, data.shop, data.reviews, data.genre, data.descr, data.image, data.fkAuthor, resultAuthor.insertId])
 
     const requiredFields = ["name", "country", "photo", "title", "published", "shop", "reviews", "genre", "descr", "image"]; for (const field of requiredFields) { if (!data[field]) { return res.status(400).json({ success: false, message: `El campo ${field} es obligatorio` }); } }
-=======
-    const [resultProject] = await conn.query(insertProject, 
-        [data.title, 
-            data.published, 
-            data.shop, 
-            data.reviews, 
-            data.genre, 
-            data.descr, 
-            data.image, 
-            authorId])
-    const requiredFields = ["name", "country", "photo", "title", "published", "shop", "reviews", "genre", "descr", "image"]; for (const field of requiredFields) { if (!data[field]) { return res.status(400).json({ success: false, message: `El campo ${field} es requerido` }); } }
->>>>>>> fav2
 
     //insert BD
     res.json({ 
