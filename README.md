@@ -46,9 +46,9 @@ Para ejecutar este proyecto de forma local, sigue estos pasos:
 ### Instalación
 1. Clona el repositorio:
    
-   ```bash
-    git clone https://github.com/Guillotdiana/project-promo-x-module-4-team-4.git
-   ```
+```bash
+git clone https://github.com/Guillotdiana/project-promo-x-module-4-team-4.git
+```
    
 3. Ve al directorio del proyecto
    
