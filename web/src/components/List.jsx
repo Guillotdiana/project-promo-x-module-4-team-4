@@ -44,7 +44,7 @@ const List = () => {
           <option value="Aventura">Aventura</option>
           <option value="Autobiografía">Autobiografía</option>
           <option value="biografia">Biografía</option>
-          <option value="cienciaFiccion">Ciencia Ficción</option>
+          <option value="Ciencia Ficción">Ciencia Ficción</option>
           <option value="comedia">Comedia</option>
           <option value="cuento">Cuento</option>
           <option value="Distopía">Distopía</option>
