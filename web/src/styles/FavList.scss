@@ -1,3 +1,9 @@
+.favlist-container {
+    display: flex;
+    padding: 3rem;
+    gap: 15px;
+}
+
 .favlist{
     color: $purple;
     font: var(--font-title-medium);
@@ -13,7 +19,19 @@
     &__list{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 3rem;
+        flex-grow: 1;
         gap: 15px;
+    }
+}
+
+.list-img{
+    display: none;
+    
+
+    @media screen and (width > 767px) {
+        display: block;
+        width: 20vw;
+        margin-left: 15px;
+        
     }
 }

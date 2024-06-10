@@ -41,7 +41,9 @@ const List = ({ addFavBook }) => {
           />
           ))}
         </div>
+        <div>
         <img className='list-img' src={image} alt="" />
+        </div>
       </div>
       <Footer />
     </div>
