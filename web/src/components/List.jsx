@@ -35,7 +35,7 @@ const List = () => {
     <div>
       <Header/>
       <div className='list__buttons'>
-        <Link to="/crear"><button className='button--link'>Crear Tarjeta</button></Link>
+        <Link to="/crear"><button className='button--link'>Crear tarjeta</button></Link>
         <Link to="/listaFavoritos"><button className='button--link'>Mis favoritos</button></Link>
       </div>
       <form className='list-form' action="">

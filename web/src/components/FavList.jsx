@@ -10,7 +10,7 @@ const FavList = ({ favBooks }) => {
     <div>
       <Header />
       <div className='favlist__buttons'>
-        <Link to="/crear"><button className='button--link'>Crear Proyecto</button></Link>
+        <Link to="/crear"><button className='button--link'>Crear tarjeta</button></Link>
         <Link to="/proyectos"><button className='button--link'>Volver al listado</button></Link>
       </div>
       <h1 className='favlist'>Tus libros favoritos</h1>
