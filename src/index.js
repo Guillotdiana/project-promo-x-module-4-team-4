@@ -65,7 +65,6 @@ server.post("/addBook", async (req, res) => {
     res.json({ 
         bookURL: `http://localhost:5001/detailBook/${resultProject.insertId}`,
         success: true  })
-    
     conn.end()
 });
 
