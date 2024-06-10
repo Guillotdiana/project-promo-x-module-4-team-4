@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .card {
     position: relative;
     z-index: 2;
@@ -134,4 +135,156 @@
   .icon__github {
     background-image: url('../images/icons/github.svg');
     background-repeat:no-repeat;
+=======
+.card {
+    min-width: 278px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: 40% 60%;
+    color: #382923;
+    font: var(--font-card-text);
+    border-radius: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    // border-style: solid;
+    border-width: 1px;
+    border-image-source: linear-gradient(to bottom, var(--color-white) 0%, rgba(0, 0, 0, 0));
+    border-image-slice: 1;
+    background-color: rgba(#d0d6a9, 0.1);
+    // background-image: linear-gradient(to bottom, var(--color-white), var(--color-white)), linear-gradient(to bottom, var(--color-white) 0%, rgba(0, 0, 0, 0));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+  
+  .card .card__projectTitle {
+    grid-column: 2;
+    position: relative;
+    margin: 15px 10px 1rem 0;
+    text-align: left;
+    // text-transform: capitalize;
+    font: var(--font-card-title);
+    color: $purple;
+
+  }
+  
+  // .card .card__projectTitle::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: calc( 50% - 1px );
+  //   bottom: calc( 50% - 1px );
+  //   left: 0;
+  //   right: 0;
+  //   z-index: 0;
+  
+  //   background-image: linear-gradient(to right, white, $purple, white);
+  // }
+  
+  .card .card__projectTitle--text {
+    position: relative;
+    // padding-inline: 0.1em;
+    z-index: 1;
+    // background-color: var(--color-white);
+    font-size: 1.3rem;
+  }
+  
+  .card .card__author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .card .card__authorPhoto {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-image: url('../images/avatar.webp');
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0.8rem;
+  }
+  
+  .card .card__job {
+    text-align: center;
+    margin-bottom: 0.2rem;
+    max-width: 145.70px;
+    word-wrap: break-word;
+  }
+  
+  .card .card__name {
+    font: var(--font-card-title);
+    margin-bottom: .2rem;
+    max-width: 145.70px;
+    word-wrap: break-word;
+  }
+
+  .card .book__title {
+    display: inline-block;
+    max-width: 270px;
+    font: var(--font-card-title);
+    margin-bottom: .2rem;
+    font-size: 20px;
+  }
+  
+  .card .card__project {
+    max-width: 270px;
+    word-wrap: break-word;
+    margin-right: 10px;
+  }
+  
+  .card .card__slogan {
+    font: var(--font-card-subtitle);
+    font-size: 13px;
+    margin-top: 0.3rem;
+    margin-bottom: .8rem;
+  }
+  
+  .card .cardcriptionTitle {
+    padding-bottom: 10px;
+    font-weight: 400;
+    // text-transform: capitalize;
+  }
+
+  .card__description {
+    padding-right: 10px;
+  }
+  
+  .card .card__technicalInfo {
+    display: grid;
+    grid-template-columns: 1fr 2rem 2rem;
+    gap: 1rem;
+    padding-right: 0.5rem;
+    margin-block: 1.8rem;
+  }
+  
+  .card .card__technologies {
+    font: var(--font-card-tech);
+  }
+  
+
+  /* ICONS */
+  
+  .icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: transparent;
+    cursor: pointer;
+  
+    // border-radius: 50%;
+    // box-shadow: 0 0 5px 0 var(--color-greyish-brown-two);
+    
+  }
+  
+  .icon__www {
+    background-image: url('../images/icons/globe-solid.svg');
+    background-repeat:no-repeat;
+
+  }
+  
+  .icon__github {
+    background-image: url('../images/icons/github.svg');
+    background-repeat:no-repeat;
+>>>>>>> aida
   }
