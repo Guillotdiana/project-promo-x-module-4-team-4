@@ -14,14 +14,37 @@
     <title>Books4You</title>
 </head>
 <body class="body">
-    <header class="header">
-      <img class="companyLogo" src="../web/src/images/books4you-logo.png" alt="Logo books4you"/>
-         <section class="hero">
-      <h2 class="title">Books4You</h2>
-      <p class="text">Crea tarjetas para mostrar tus libros favoritos</p>
-    </section>
-     <img class="logoSponsor" src="../web/src/images/adalab.png" alt="Logo Adalab"/>
-   </header>
+  <section class="preview">
+    <div class="mockup"></div>
+    <div class="projectImage"
+    style=  backgroundImage: `url(${avatar})`  ></div>
+    <div class="projectImagePlaceholder"></div>
+    <article class="card">
+      <h2 class="card__projectTitle"><span class="card__projectTitle--text">Tarjeta del libro</span></h2>
+      <div class="card__author">
+        <Profile photo={photo} />
+        <h3 class="card__name">{name || "Almudena Grandes"}</h3>
+        <p class="card__job">{country || "España"}</p>
+      </div>
+      <div class="card__project">
+        <h3 class="book__title">{title || "Inés y la alegría"}</h3>
+        <p class="card__slogan">{published || "2010"}</p>
+        <h3 class="card__descriptionTitle">Descripción del libro</h3>
+        <p class="card__description">{descr || "Una historia de amor, y la historia de unos días que pudieron cambiar para siempre el destino de España"}</p>
+        <div class="card__technicalInfo">
+          <p class="card__technologies">{genre || "Novela histórica"}</p>
+          <a class="icon icon__www" href={reviews || "#"} title="Haz click para ver reseñas el libro" target="_blank">
+            Enlace a las reseñas
+          </a>
+          <a class="icon icon__github" href={shop || "#"} title="Haz click para obtener el libro" target="_blank">
+            Enlace al libro
+          </a>
+          <Like onLike={handleLike} />
+
+        </div>
+      </div>
+    </article>
+  </section>
 
    
 
