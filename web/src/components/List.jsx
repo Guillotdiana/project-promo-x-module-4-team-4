@@ -10,11 +10,13 @@ const List = () => {
   
   const [listBooks, setListBooks] = useState([]);
   const [filterList, setFilterList] = useState("all");
+  const [loaderList, setLoaderList] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:5001/getBooks")
     .then((response) => response.json())
     .then(info => {
+      setLoaderList(false)
       setListBooks(info.data)
     })
   }, [])
@@ -78,7 +80,11 @@ const List = () => {
           <option value="Zombie">Zombie</option>
           </select> 
       </form>
+     
       <div className='list-page' >
+      <div className="loader-box">
+          <div className={`loader-list ${!loaderList ? "hidden" : ""}`}></div>
+        </div>
         <div className='cards-container'>
           {filterBook.map((userData,i) => <a className="card-link" href={`http://localhost:5001/detailBook/${userData.idBook}`} key={i} target="_blank"><CardPreview  userData={userData}/></a>)}
           

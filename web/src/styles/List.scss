@@ -73,8 +73,14 @@
 }
 
 .card-link {
-    cursor: pointer;
-
-    
+    cursor: pointer;   
 }
 
+.loader-list {
+    margin-top: 50px;
+    border: 8px dotted $ligth-purple;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
