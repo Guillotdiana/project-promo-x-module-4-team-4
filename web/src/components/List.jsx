@@ -84,11 +84,11 @@ const List = ({addFavBook}) => {
           <option value="Zombie">Zombie</option>
           </select> 
       </form>
-     
-      <div className='list-page' >
       <div className="loader-box">
           <div className={`loader-list ${!loaderList ? "hidden" : ""}`}></div>
         </div>
+      <div className='list-page' >
+      
         <div className='cards-container'>
           {filterBook.map((userData,i) => <a className="card-link" href={`http://localhost:5001/detailBook/${userData.idBook}`} key={i} target="_blank"><CardPreview onLike={handleLike}  userData={userData}/></a>)}
           
