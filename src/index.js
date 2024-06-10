@@ -2,11 +2,14 @@
 const express = require("express")
 const cors = require("cors")
 const mysql = require("mysql2/promise")
+const path = require("path");
+
 
 //crear mi server
 const server = express();
 server.use(cors());
 server.use(express.json( {limit: '20mb' }));
+server.set("view engine", "ejs");
 
 //configuración del servidor
 const PORT = 5001;
@@ -14,6 +17,9 @@ const PORT = 5001;
 server.listen(PORT, () => {
     console.log(`server is running http://localhost:${PORT}`);
 });
+
+//crear servidor de estático con la ruta de carpeta css
+server.use(express.static('./src/css'));
 
 async function connectDB(){  
 
@@ -69,14 +75,17 @@ server.post("/addBook", async (req, res) => {
     conn.end()
 });
 
-
-server.get("/detailBook", (req, res) => {
-    //para renderizar el detalle
+//motor de plantilla para renderizar el detalle
+server.get("/detail/:idBook", async (req, res) => {
+    const conn = await connectDB();
+    const {idBook} = req.params;
+    const findBook = 'SELECT * FROM Book INNER JOIN author on Book.fkAuthor = author.idAuthor WHERE idBook = ?';
+    const [resultBook] = await conn.query(findBook, [idBook]);
+    res.render('detail', { detail: resultBook[0] });
+    conn.end();
 });
 
-server.delete("/delete", () =>{
 
-});
 
 //rutas estáticas
 const staticUrl = "./src/public";
