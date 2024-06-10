@@ -57,7 +57,7 @@ git clone https://github.com/Guillotdiana/project-promo-x-module-4-team-4.git
     npm install
   ```
 
-4. Abre tu navegador y ve a `http://localhost:3000` para ver la aplicación en acción.
+5. Abre tu navegador y ve a `http://localhost:3000` para ver la aplicación en acción.
 
 
 ## Licencia
