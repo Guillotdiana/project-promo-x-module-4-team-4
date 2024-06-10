@@ -45,12 +45,14 @@ Para ejecutar este proyecto de forma local, sigue estos pasos:
 
 ### Instalación
 1. Clona el repositorio:
+   
    ```bash
     git clone https://github.com/tu-usuario/books4you.git](https://github.com/Guillotdiana/project-promo-x-module-4-team-4.git
-  ```
-2. Ve al directorio del proyecto
+   ```
    
-3. Instala las dependencias:
+3. Ve al directorio del proyecto
+   
+4. Instala las dependencias:
   ```bash
     npm install
   ```
