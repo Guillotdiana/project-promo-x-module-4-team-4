@@ -73,6 +73,8 @@ function App() {
               <>
                 <Header />
                 <Page
+                  addFavBook={addFavBook} 
+                  favBooks={favBooks}
                   function={changeData}
                   userData={userData}
                   updateAvatar={updateAvatar}
@@ -89,7 +91,7 @@ function App() {
           />
           <Route
             path="/listafavoritos"
-            element={<FavList favBooks={favBooks} />}
+            element={<FavList userData={userData} addFavBook={addFavBook} favBooks={favBooks} />}
           />
         </Routes>
       </div>

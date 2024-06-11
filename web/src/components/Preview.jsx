@@ -1,4 +1,4 @@
-import CardPreview from "./CardPreview";
+import CardPreviewCreate from "./CardPreviewCreate";
 import defaultAvatar from '../images/libro3.jpg';
 
 const Preview = (props) => {
@@ -9,7 +9,7 @@ const Preview = (props) => {
       <div className="projectImage"
       style={{ backgroundImage: `url(${avatar})` }} ></div>
       <div className="projectImagePlaceholder"></div>
-      <CardPreview userData= {props.userData} />
+      <CardPreviewCreate userData= {props.userData} />
       
     </section>
   )

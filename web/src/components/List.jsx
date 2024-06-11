@@ -18,6 +18,7 @@ const List = ({addFavBook, favBooks}) => {
     .then(info => {
       setLoaderList(false)
       setListBooks(info.data)
+      console.log(info.data)
     })
   }, [])
 

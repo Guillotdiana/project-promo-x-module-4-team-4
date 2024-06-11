@@ -5,7 +5,7 @@ import Footer from './Footer';
 import CardPreview from './CardPreview';
 import image from "../images/image-favs.png";
 
-const FavList = ({ favBooks }) => {
+const FavList = ({ favBooks, addFavBook }) => {
   
   return (
     <div>
@@ -17,7 +17,7 @@ const FavList = ({ favBooks }) => {
       <h1 className='favlist'>Tus libros favoritos</h1>
       <div className='favlist__list'>
         {favBooks.map((book, index) => (
-          <CardPreview key={index} userData={book} />
+          <CardPreview favBooks={favBooks} onLike={addFavBook} key={index} userData={book} />
         ))}
       </div>
       <Footer />

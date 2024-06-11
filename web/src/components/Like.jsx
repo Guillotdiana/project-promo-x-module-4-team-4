@@ -35,9 +35,14 @@ const Like = ({ onLike, id, favBooks }) => {
 
 
   function faveClass() {
-    const favsIndex = favBooks.findIndex((item) => item.idBook === id);
-    const fave = favsIndex === -1 ? "" : "fave";
-    return fave
+    try {
+      const favsIndex = favBooks.findIndex((item) => item.idBook === id);
+      const fave = favsIndex === -1 ? "" : "fave";
+      return fave
+    } catch (error) {
+      return false
+    }
+    
   }
 
   function handleLike() {
