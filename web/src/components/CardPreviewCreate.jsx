@@ -16,7 +16,7 @@ const CardPreviewCreate = ({ userData, onLike, favBooks }) => {
 
   return (
     <div className="card-preview-container">
-      <a className="card-link" href={`http://localhost:5001/detailBook/${userData.idBook}`} target="_blank">
+      <a className="card-link" href={`https://project-promo-x-module-4-team-4.onrender.com/detailBook/${userData.idBook}`} target="_blank">
       <article className="card">
         <h2 className="card__projectTitle"><span className="card__projectTitle--text">Tarjeta del libro</span></h2>
         <div className="card__author">

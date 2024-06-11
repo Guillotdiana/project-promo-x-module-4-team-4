@@ -13,7 +13,7 @@ const List = ({addFavBook, favBooks}) => {
   const [loaderList, setLoaderList] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5001/getBooks")
+    fetch(`https://project-promo-x-module-4-team-4.onrender.com/getBooks`)
     .then((response) => response.json())
     .then(info => {
       setLoaderList(false)

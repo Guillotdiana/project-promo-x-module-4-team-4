@@ -15,10 +15,13 @@ const FavList = ({ favBooks, addFavBook }) => {
         <Link to="/proyectos"><button className='button--link'>Volver al listado</button></Link>
       </div>
       <h1 className='favlist'>Tus libros favoritos</h1>
+      <div className="favlist-container">
+      <img className='list-img' src={image} alt="" />
       <div className='favlist__list'>
         {favBooks.map((book, index) => (
           <CardPreview favBooks={favBooks} onLike={addFavBook} key={index} userData={book} />
         ))}
+      </div>
       </div>
       <Footer />
     </div>

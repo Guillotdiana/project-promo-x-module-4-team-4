@@ -2,7 +2,8 @@
 const express = require("express")
 const cors = require("cors")
 const mysql = require("mysql2/promise")
-const path = require("path");
+const pa2th = require("path");
+require("dotenv").config();
 
 
 //crear mi server
@@ -12,10 +13,10 @@ server.use(express.json( {limit: '20mb' }));
 server.set("view engine", "ejs");
 
 //configuración del servidor
-const PORT = 5001;
+const PORT = process.env.PROJ_PORT || 5001;
 
 server.listen(PORT, () => {
-    console.log(`server is running http://localhost:${PORT}`);
+    console.log(`server is running ${PORT}`);
 });
 
 //crear servidor de estático con la ruta de carpeta css
@@ -69,7 +70,7 @@ server.post("/addBook", async (req, res) => {
 
     //insert BD
     res.json({ 
-        bookURL: `http://localhost:5001/detailBook/${resultProject.insertId}`,
+        bookURL: `${PORT}detailBook/${resultProject.insertId}`,
         success: true  })
     
     conn.end()

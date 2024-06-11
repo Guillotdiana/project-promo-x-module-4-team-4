@@ -1,5 +1,5 @@
 const fetchDelete = (id) => {
-    (`http://localhost:5001/deleteBook/${id}`, {
+    (`https://project-promo-x-module-4-team-4.onrender.com/deleteBook/${id}`, {
     method: "DELETE",
     })
         .then(response => response.json())
