@@ -41,10 +41,25 @@ function App() {
     setUserData({ ...userData, [image]: avatar });
   };
 
-  const addFavBook = (book) => {
-    const updatedFavBooks = [...favBooks, book];
-    setFavBooks(updatedFavBooks);
-    localStorage.setItem("favBooks", JSON.stringify(updatedFavBooks));
+  //  const addFavBook = (book) => {
+  //   const updatedFavBooks = [...favBooks, book];
+  //   setFavBooks(updatedFavBooks);
+  //   localStorage.setItem("favBooks", JSON.stringify(updatedFavBooks));
+  //   console.log(book);
+  // };
+
+   const addFavBook = (book) => {
+    const index = favBooks.findIndex((favBook) => favBook.id === book.idBook);
+  
+    if (index !== -1) {
+      // Si el ID está presente, eliminamos el libro del array
+      const updatedFavBooks = [...favBooks];
+      updatedFavBooks.splice(index, 1);
+      setFavBooks(updatedFavBooks);
+    } else {
+      // Si el ID no está presente, agregamos el libro al array
+      setFavBooks(prevFavBooks => [...prevFavBooks, { ...book }]);
+    }
   };
 
   return (

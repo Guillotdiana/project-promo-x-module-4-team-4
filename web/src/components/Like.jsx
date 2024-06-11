@@ -42,7 +42,7 @@ const Like = ({ onLike }) => {
   }
 
   return (
-    <button className="like__button" onClick={handleLike}>
+    <button className="like__button" onClick={onLike}>
       <span>📖</span>
       <span>{liked ? 'Unlike' : 'Like'}</span>
     </button>

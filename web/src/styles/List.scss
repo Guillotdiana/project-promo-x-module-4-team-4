@@ -14,12 +14,10 @@
 
     @media screen and (width > 767px) {
        grid-template-columns: 1fr 1fr;
+       margin-right: 350px
     }
 
-    @media screen and (width > 1000px) {
-        grid-template-columns: 1fr 1fr; 
-        
-    }
+   
 }
 
 .list-img{
@@ -28,8 +26,14 @@
 
     @media screen and (width > 767px) {
         display: block;
-        width: 20vw;
+        padding-bottom: 30px;
+        height: 90%;
         margin-left: 15px;
+        position: fixed;
+        z-index: 10;
+        right: 0;
+        top:1
+        
         
     }
 }

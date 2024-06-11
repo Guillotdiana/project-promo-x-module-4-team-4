@@ -40,6 +40,9 @@ const List = ({addFavBook}) => {
   return (
     <div>
       <Header/>
+      <div>
+        <img className='list-img' src={image} alt="" />
+        </div>
       <div className='list__buttons'>
         <Link to="/crear"><button className='button--link'>Crear tarjeta</button></Link>
         <Link to="/listaFavoritos"><button className='button--link'>Mis favoritos</button></Link>
@@ -93,9 +96,7 @@ const List = ({addFavBook}) => {
           {filterBook.map((userData,i) => <a className="card-link" href={`http://localhost:5001/detailBook/${userData.idBook}`} key={i} target="_blank"><CardPreview onLike={handleLike}  userData={userData}/></a>)}
           
         </div>
-        <div>
-        <img className='list-img' src={image} alt="" />
-        </div>
+
       </div>
       <Footer />
     </div>
