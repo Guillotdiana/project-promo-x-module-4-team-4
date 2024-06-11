@@ -12,7 +12,8 @@ server.use(express.json( {limit: '20mb' }));
 server.set("view engine", "ejs");
 
 //configuración del servidor
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
+
 
 server.listen(PORT, () => {
     console.log(`server is running http://localhost:${PORT}`);
