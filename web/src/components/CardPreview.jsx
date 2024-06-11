@@ -37,7 +37,6 @@ const CardPreview = ({ userData, onLike, favBooks }) => {
             <a className="icon icon__github" href={shop || "#"} title="Haz click para obtener el libro" target="_blank">
               Enlace al libro
             </a>
-            
 
           </div>
         </div>

@@ -86,8 +86,30 @@ server.get("/detailBook/:idBook", async (req, res) => {
     conn.end();
 });
 
+//endpoint delete 
+server.delete("/deleteBook/:idBook", async (req, res) => {
+    try{
+        const conn = await connectDB();
+        const {idBook} = req.params;
+       
+        const deleteBook  = "DELETE FROM Book WHERE idBook = ?;"
+        
+        const [result] = await conn.query(deleteBook, [idBook]);
+
+        if(result.affectedRows > 0){
+            res.status(200).json({succes: true});
+        } else {
+            res.status(200).json({succes: false, message: "No existe ese libro"});
+        }
+
+    } catch(error){
+        res.status(400).json(error);
+    }
+ });
 
 
 //rutas estáticas
 const staticUrl = "./src/public";
 server.use(express.static(staticUrl));
+
+
