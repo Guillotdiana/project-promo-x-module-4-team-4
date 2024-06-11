@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import CardPreview from './CardPreview'
 import image from "../images/Imagenlist.png";
 
-const List = ({addFavBook}) => {
+const List = ({addFavBook, favBooks}) => {
   
   const [listBooks, setListBooks] = useState([]);
   const [filterList, setFilterList] = useState("all");
@@ -90,7 +90,7 @@ const List = ({addFavBook}) => {
       <div className='list-page' >
       
         <div className='cards-container'>
-          {filterBook.map((userData,i) => <a className="card-link" href={`http://localhost:5001/detailBook/${userData.idBook}`} key={i} target="_blank"><CardPreview onLike={handleLike}  userData={userData}/></a>)}
+          {filterBook.map((userData,i) => <CardPreview key={i}  onLike={handleLike} favBooks={favBooks}  userData={userData}/>)}
           
         </div>
         <div>

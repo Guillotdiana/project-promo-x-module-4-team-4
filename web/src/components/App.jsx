@@ -41,10 +41,25 @@ function App() {
     setUserData({ ...userData, [image]: avatar });
   };
 
+  // const addFavBook = (book) => {
+  //   const updatedFavBooks = [...favBooks, book];
+  //   setFavBooks(updatedFavBooks);
+  //   localStorage.setItem("favBooks", JSON.stringify(updatedFavBooks));
+  // };
+
   const addFavBook = (book) => {
-    const updatedFavBooks = [...favBooks, book];
-    setFavBooks(updatedFavBooks);
-    localStorage.setItem("favBooks", JSON.stringify(updatedFavBooks));
+    const index = favBooks.findIndex((item) => item.idBook === book.idBook);
+
+    if (index === -1) {
+      const updatedFavBooks = [...favBooks, book];
+      setFavBooks(updatedFavBooks);
+      localStorage.setItem("favBooks", JSON.stringify(updatedFavBooks));
+    } else {
+      const booksCopy = [...favBooks];
+      booksCopy.splice(index, 1)
+      setFavBooks(booksCopy);
+    }
+
   };
 
   return (

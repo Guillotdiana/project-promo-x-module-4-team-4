@@ -15,8 +15,8 @@ const defaults = {
   origin: { y: 0.3 }
 };
 
-const Like = ({ onLike }) => {
-  const [liked, setLiked] = useState();
+const Like = ({ onLike, id, favBooks }) => {
+  const [liked, setLiked] = useState(false);
 
   function shoot() {
     confetti({
@@ -33,18 +33,26 @@ const Like = ({ onLike }) => {
     if (onLike) onLike();
   }
 
+
+  function faveClass() {
+    const favsIndex = favBooks.findIndex((item) => item.idBook === id);
+    const fave = favsIndex === -1 ? "" : "fave";
+    return fave
+  }
+
   function handleLike() {
     if (!liked) {
       shoot();
     }
     setLiked(!liked);
     if (onLike) onLike();
+    console.log(id)
   }
 
   return (
-    <button className="like__button" onClick={handleLike}>
+    <button className={`like__button ${faveClass()}`} onClick={handleLike}>
       <span>📖</span>
-      <span>{liked ? 'Unlike' : 'Like'}</span>
+      <span>{faveClass() ? 'Unlike' : 'Like'}</span>
     </button>
   );
 }

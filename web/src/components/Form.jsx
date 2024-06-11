@@ -48,7 +48,7 @@ const Form = (props ) => {
           setLoader(false);
         } else if (!response.success) {
           props.setUrl(<p>Hubo un error al generar la URL.</p>);
-          setLoader(false);npm
+          setLoader(false);
         }
     })
   }
