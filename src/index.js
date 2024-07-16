@@ -14,7 +14,7 @@ server.set("view engine", "ejs");
 require('dotenv').config();
 
 //configuración del servidor
-const PORT = process.env.PROJ_PORT || 5001;
+const PORT = process.env.PORT || 5001;
 
 
 
@@ -73,7 +73,7 @@ server.post("/addBook", async (req, res) => {
 
     //insert BD
     res.json({ 
-        bookURL: `${PORT}detailBook/${resultProject.insertId}`,
+        bookURL: `${process.env.PROJ_PORT}detailBook/${resultProject.insertId}`,
         success: true  })
     
     conn.end()
